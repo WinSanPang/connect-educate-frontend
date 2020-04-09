@@ -1,3 +1,8 @@
+# Overview
+This project is part of the UKvsCOVID19 2020 Hackathon. The aim is to create an online platform for families to list their education-related support needs and volunteers to respond to listed requests, e.g. translation requirements, recorded storytelling, homework help.  
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
