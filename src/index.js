@@ -12,6 +12,7 @@ import './index.css';
 import App from './App';
 import Signup from 'containers/Signup';
 import NotFound from 'containers/NotFound';
+import AskForHelp from 'containers/AskForHelp'
 import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();
@@ -24,6 +25,7 @@ ReactDOM.render(
 			<Switch>
 				<Route path="/" exact={true} component={App} />
 				<Route path="/volunteer-with-us" component={Signup} />
+				<Route path="/ask-for-help" component={AskForHelp} />
 				<Route path="*" component={NotFound}/>
 			</Switch>
 		</Router>
