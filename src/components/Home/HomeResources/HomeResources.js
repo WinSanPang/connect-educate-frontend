@@ -1,5 +1,8 @@
 import React from 'react';
-import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
+import { Container, Header, Grid, Icon, Image } from 'semantic-ui-react';
+
+import JigsawTwo from '../../../assets/jigsaw-2-small.png';
+import Flower from '../../../assets/flower-small.png';
 
 const HomeResources = () => (
   <Container textAlign='center'>
@@ -14,21 +17,29 @@ const HomeResources = () => (
     <Grid columns={3}>
       <Grid.Row>
         <Grid.Column>
+          <Image
+            src={Flower}
+            style={{
+              textAlign: 'center',
+              display: 'inline'
+            }}
+          />
           <Header as='h2' icon>
-            <Icon 
-              name='address card'
-              size='massive'/>
-                Resource 1
+            Resource 1
             <Header.Subheader style={{marginTop: '5%'}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
             </Header.Subheader>
           </Header>
         </Grid.Column>
         <Grid.Column>
+          <Image 
+            src={JigsawTwo}
+            style={{
+              textAlign: 'center',
+              display: 'inline'
+            }}
+            />
           <Header as='h2' icon>
-            <Icon
-            name='envelope'
-            size='massive'/>
               Resource 2
             <Header.Subheader style={{marginTop: '5%'}}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
