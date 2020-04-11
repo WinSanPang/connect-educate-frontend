@@ -1,36 +1,34 @@
 import axios from 'axios';
+import config from '../config';
 
-export const fetchSuccess = ( type, data, parent = null ) => ({
+const success = ( type, data ) => ({
 	type,
 	payload: data,
-	parent,
 });
 
-export const fetchData = ( endpoint ) => {
-    const data = {
-        'id': 1, 
-        'message': 'Testing',
-        'author': 'Test'
-    }
+const fetchData = ( endpoint, data ) => {
+    const response = axios({
+        method: 'get',
+        url: `${config.API_URL}/${endpoint}`,
+        data,
+        responseType: 'json'
+	});
 
-    return new Promise(function(resolve, reject) {
-        resolve(data);
-    });
-
-    // const data = axios.get( `${process.env.CONNECT_API_URL}/${endpoint}`, {
-	// 	responseType: 'json',
-	// 	headers: [],
-	// });
-
-	// return data;
+	return response;
 }
 
-export const postData = ( endpoint, data ) => {
+const postData = ( endpoint, data ) => {
     const response = axios({
         method: 'post',
-        url: `${process.env.CONNECT_API_URL}/${endpoint}`,
+        url: `${config.API_URL}/${endpoint}`,
         data
     });
 
 	return response;
+}
+
+export {
+    success, 
+    fetchData,
+    postData,
 }
