@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Divider } from 'semantic-ui-react';
-
 import Layout from '../../components/Layout/Layout';
 import QuestionFrom from '../../components/AskAQuestion/QuestionForm'
 

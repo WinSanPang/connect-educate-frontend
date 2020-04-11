@@ -12,6 +12,8 @@ import './index.css';
 import App from './App';
 import Signup from 'containers/Signup';
 import NotFound from 'containers/NotFound';
+import AskForHelp from 'containers/AskForHelp'
+import Mentors from 'containers/Mentors';
 import AskAQuestion from 'containers/AskAQuestion'
 import * as serviceWorker from './serviceWorker';
 
@@ -25,6 +27,8 @@ ReactDOM.render(
 			<Switch>
 				<Route path="/" exact={true} component={App} />
 				<Route path="/volunteer-with-us" component={Signup} />
+				<Route path="/ask-for-help" component={AskForHelp} />
+				<Route path="/our-mentors" component={Mentors}/>
 				<Route path="/ask-a-question" component={AskAQuestion} />
 				<Route path="*" component={NotFound}/>
 			</Switch>
