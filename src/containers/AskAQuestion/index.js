@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import { Divider } from 'semantic-ui-react';
 
 import Layout from '../../components/Layout/Layout';
-import { HomeHeader } from '../../components/Home/HomeHeader/HomeHeader';
+import QuestionFrom from '../../components/AskForHelp/QuestionForm'
 
-export class AskForHelp extends Component {
+export class AskAQuestion extends Component {
 
   render() {
 
     return (
       <div>
         <Layout/>
+        <QuestionFrom/>
       </div>
     );
   }
 }
 
-export default AskForHelp;
+export default AskAQuestion;
