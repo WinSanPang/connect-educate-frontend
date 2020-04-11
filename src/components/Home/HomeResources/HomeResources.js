@@ -19,7 +19,7 @@ const HomeResources = () => (
               name='address card'
               size='massive'/>
                 Resource 1
-            <Header.Subheader>
+            <Header.Subheader style={{marginTop: '5%'}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
             </Header.Subheader>
           </Header>
@@ -30,7 +30,7 @@ const HomeResources = () => (
             name='envelope'
             size='massive'/>
               Resource 2
-            <Header.Subheader>
+            <Header.Subheader style={{marginTop: '5%'}}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
             </Header.Subheader>
           </Header>
@@ -41,7 +41,7 @@ const HomeResources = () => (
               name='comments'
               size='massive'/>
                 Resource 3
-            <Header.Subheader>
+            <Header.Subheader style={{marginTop: '5%'}}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
             </Header.Subheader>
           </Header>

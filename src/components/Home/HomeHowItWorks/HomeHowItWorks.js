@@ -19,8 +19,8 @@ const HomeHowItWorks = () => (
               name='address card'
               size='massive'/>
                 Browse our Mentors
-            <Header.Subheader>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
+            <Header.Subheader style={{marginTop: '5%'}}>
+              We have a range of volunteer mentors who we hope can help with with any request you have about supporting your child's learning - this includes teachers, other parents, tech experts and people who do communities and education work!
             </Header.Subheader>
           </Header>
         </Grid.Column>
@@ -30,8 +30,8 @@ const HomeHowItWorks = () => (
             name='envelope'
             size='massive'/>
               Send a Help Request
-            <Header.Subheader>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
+            <Header.Subheader style={{marginTop: '5%'}}>
+            Send us a message about what you would like help with. This can be in English or in any other language that you can see listed on the language options.
             </Header.Subheader>
           </Header>
         </Grid.Column>
@@ -40,9 +40,9 @@ const HomeHowItWorks = () => (
             <Icon 
               name='comments'
               size='massive'/>
-                Connect and Learn
-            <Header.Subheader>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
+                Connected Learning
+            <Header.Subheader style={{marginTop: '5%'}}>
+            Our volunteer mentors can hopefully help with your request by sharing resources, advice and having a chat!
             </Header.Subheader>
           </Header>
         </Grid.Column>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Image, Button } from 'semantic-ui-react';
-import HeaderImage from '../../../assets/Header.png';
+
+import HeaderImage from '../../../assets/header.png';
 
 export class HomeHeader extends Component {
   state = {}
