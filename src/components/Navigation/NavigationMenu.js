@@ -15,13 +15,16 @@ export default class NavigationMenu extends Component {
       <Menu 
         stackable 
         size='huge'
-        borderless>
+        borderless
+        href='/'
+        >
           <Menu.Item>
             <Image src={Logo}/>
           </Menu.Item>
 
           <Menu.Item
             name='Mentors'
+            href='/our-mentors'
             active={activeItem === 'mentors'}
             onClick={this.handleItemClick}
             position='right'
@@ -33,6 +36,7 @@ export default class NavigationMenu extends Component {
             name='Requests'
             active={activeItem === 'requests'}
             onClick={this.handleItemClick}
+            href='/resources'
           >
             Resources
           </Menu.Item>
@@ -41,6 +45,7 @@ export default class NavigationMenu extends Component {
             name='FAQ'
             active={activeItem === 'faq'}
             onClick={this.handleItemClick}
+            href='/faqs'
           >
             FAQ
           </Menu.Item>
@@ -49,6 +54,7 @@ export default class NavigationMenu extends Component {
             name='Contact'
             active={activeItem === 'contact'}
             onClick={this.handleItemClick}
+            href='/contact'
           >
             Contact
           </Menu.Item>
