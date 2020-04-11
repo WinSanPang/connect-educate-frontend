@@ -5,6 +5,30 @@ This project is part of the [UKvsCOVID19 2020 Hackathon](https://womendrivendev.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Getting Started Locally
+
+## Backend
+
+__Prerequisites__
+
+* Ruby version 2.6.1
+
+>`git clone git@github.com:inesgs12/connect-educate-backend.git`
+>
+>`git checkout dev`
+>
+>`gem install rails`
+>
+>`bundle install`
+>
+>`rails s`
+
+## Frontend
+
+>`yarn install && yarn start`
+
+Open [http://localhost:3001](http://localhost:3000) to view it in the browser.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -12,7 +36,7 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
