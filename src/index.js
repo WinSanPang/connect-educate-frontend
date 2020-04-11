@@ -12,7 +12,7 @@ import './index.css';
 import App from './App';
 import Signup from 'containers/Signup';
 import NotFound from 'containers/NotFound';
-import AskAQuestion from 'containers/AskForHelp'
+import AskAQuestion from 'containers/AskAQuestion'
 import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();
