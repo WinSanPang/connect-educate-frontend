@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { 
+	BrowserRouter as Router, 
+	Switch, 
+	Route
+} from 'react-router-dom';
 import configureStore from './configureStore';
 
 import './index.css';
 import App from './App';
+import Signup from 'containers/Signup';
+import NotFound from 'containers/NotFound';
 import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();
@@ -15,7 +21,11 @@ const store = configureStore();
 ReactDOM.render(
 	<Provider store={store}>
 		<Router>
-			<Route path="/" component={App} />
+			<Switch>
+				<Route path="/" exact={true} component={App} />
+				<Route path="/volunteer-with-us" component={Signup} />
+				<Route path="*" component={NotFound}/>
+			</Switch>
 		</Router>
 	</Provider>,
   document.getElementById('root')
