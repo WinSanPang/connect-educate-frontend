@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
+
+import Logo from '../../assets/logo-small.png';
 
 export default class NavigationMenu extends Component {
   state = {}
@@ -15,7 +17,7 @@ export default class NavigationMenu extends Component {
         size='huge'
         borderless>
           <Menu.Item>
-            <img src='/logo.png' />
+            <Image src={Logo}/>
           </Menu.Item>
 
           <Menu.Item
@@ -32,7 +34,7 @@ export default class NavigationMenu extends Component {
             active={activeItem === 'requests'}
             onClick={this.handleItemClick}
           >
-            Requests
+            Resources
           </Menu.Item>
 
           <Menu.Item
