@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Image, Button } from 'semantic-ui-react';
+import HeaderImage from '../../../assets/Header.png';
 
 export class HomeHeader extends Component {
   state = {}
@@ -10,12 +11,11 @@ export class HomeHeader extends Component {
     const { activeItem } = this.state
 
     return (
-      <div>
         <Container
           textAlign='center'
           >
           <Image 
-            src='https://cms-tc.pbskids.org/parents/articles/Connecting-with-Kids-Through-Art.jpg?mtime=20181203085214' 
+            src={HeaderImage}
             fluid
             />
         <Button 
@@ -41,8 +41,6 @@ export class HomeHeader extends Component {
           onClick={this.handleItemClick}
           />
         </Container>
-        
-      </div>
     );
   }
 }

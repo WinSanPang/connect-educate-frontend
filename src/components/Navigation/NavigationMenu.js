@@ -32,7 +32,7 @@ export default class NavigationMenu extends Component {
             active={activeItem === 'requests'}
             onClick={this.handleItemClick}
           >
-            Requests
+            Resources
           </Menu.Item>
 
           <Menu.Item
