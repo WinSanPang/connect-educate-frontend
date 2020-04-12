@@ -58,6 +58,15 @@ export default class NavigationMenu extends Component {
           >
             Contact
           </Menu.Item>
+
+          <Menu.Item
+            name='Login'
+            active={activeItem === 'login'}
+            onClick={this.handleItemClick}
+            href='/login'
+          >
+            Login
+          </Menu.Item>
         </Menu>
     )
   }
