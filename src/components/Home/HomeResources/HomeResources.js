@@ -39,24 +39,27 @@ const HomeResources = () => (
             src={JigsawTwo}
             style={{
               textAlign: 'center',
-              display: 'inline'
+              display: 'inline',
+              padding: '4%'
             }}
             />
           <Header as='h2' icon>
-              Resource 2
+              Games
             <Header.Subheader style={{marginTop: '5%'}}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
+            Click <a href='https://www.bbc.co.uk/bitesize/collections/primary-games/1'>here</a> for a list of games that you and your child could play
             </Header.Subheader>
           </Header>
         </Grid.Column>
         <Grid.Column>
           <Header as='h2' icon>
             <Icon 
-              name='comments'
-              size='massive'/>
-                Resource 3
+              name='book'
+              size='massive'
+              style={{padding:'10%'}}
+              />
+                Stories
             <Header.Subheader style={{marginTop: '5%'}}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
+              For a list of multicultural books, click <a href='https://www.thisisbooklove.com/'>here</a> or find the perfect story in your language <a href='https://stories.audible.com/discovery'>here</a>. You can also discover more reading resources and the philosophy behind children's learning <a href='https://www.janeyates.net/45254287'>here</a>
             </Header.Subheader>
           </Header>
         </Grid.Column>

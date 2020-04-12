@@ -44,15 +44,6 @@ export default class NavigationMenu extends Component {
           </Menu.Item>
 
           <Menu.Item
-            name='FAQ'
-            active={activeItem === 'faq'}
-            onClick={this.handleItemClick}
-            href='/faqs'
-          >
-            FAQ
-          </Menu.Item>
-
-          <Menu.Item
             name='Contact'
             active={activeItem === 'contact'}
             onClick={this.handleItemClick}

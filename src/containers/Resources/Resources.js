@@ -39,24 +39,64 @@ const Resources = () => (
             src={JigsawTwo}
             style={{
               textAlign: 'center',
-              display: 'inline'
+              display: 'inline',
+              padding: '4%'
             }}
             />
           <Header as='h2' icon>
-              Resource 2
+              Games
             <Header.Subheader style={{marginTop: '5%'}}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
+              Click <a href='https://www.bbc.co.uk/bitesize/collections/primary-games/1'>here</a> for a list of games that you and your child could play
             </Header.Subheader>
           </Header>
         </Grid.Column>
         <Grid.Column>
           <Header as='h2' icon>
             <Icon 
-              name='comments'
-              size='massive'/>
-                Resource 3
+              name='book'
+              size='massive'
+              style={{padding:'10%'}}/>
+                Stories
             <Header.Subheader style={{marginTop: '5%'}}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
+            For a list of multicultural books, click <a href='https://www.thisisbooklove.com/'>here</a> or find the perfect story in your language <a href='https://stories.audible.com/discovery'>here</a>. You can also discover more reading resources and the philosophy behind children's learning <a href='https://www.janeyates.net/45254287'>here</a>
+            </Header.Subheader>
+          </Header>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column>
+          <Header as='h2' icon>
+            <Icon 
+              name='microphone'
+              size='massive'
+              style={{padding:'10%'}}/>
+            Phonics
+            <Header.Subheader style={{marginTop: '5%'}}>
+              Want to practice phonics with your child? Click <a href='https://www.youtube.com/channel/UCo7fbLgY2oA_cFCIg9GdxtQ/'>here</a> for some daily phonics lessons 
+            </Header.Subheader>
+          </Header>
+        </Grid.Column>
+        <Grid.Column>
+          <Header as='h2' icon>
+            <Icon 
+              name='space shuttle'
+              size='massive'
+              style={{padding:'10%'}}/>
+                Outer Space
+            <Header.Subheader style={{marginTop: '5%'}}>
+              Let your kid's imagination go out of space with <a href='https://www.nasa.gov/kidsclub/index.html'>NASA's kids club</a>
+            </Header.Subheader>
+          </Header>
+        </Grid.Column>
+        <Grid.Column>
+          <Header as='h2' icon>
+            <Icon 
+              name='bicycle'
+              size='massive'
+              style={{padding:'10%'}}/>
+                Exercise
+            <Header.Subheader style={{marginTop: '5%'}}>
+             Burn some calories with your little one with some <a href='https://www.thebodycoach.com/blog/pe-with-joe-1254.html/'>PE lessons</a> or why not try some <a href='https://www.youtube.com/watch?v=4ZpkRAcgws4/'>Yoga at home</a>
             </Header.Subheader>
           </Header>
         </Grid.Column>
