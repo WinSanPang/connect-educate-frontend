@@ -18,9 +18,8 @@ export class ResetPassword extends Component {
         resetPasswordSent: false
     }
     
-  resetPasswordHandler = (event) => {
-      this.setState((prevState) => ({resetPasswordSent: !prevState.resetPasswordSent}));
-      event.preventDefault();
+  resetPasswordHandler = () => {
+      resetUserPassword();
     }
 
     render() {
@@ -106,10 +105,14 @@ export class ResetPassword extends Component {
     }
 };
 
+const mapStateToProps = ( state ) => ({
+  resetPassword: state.resetPassword
+})
+
 const mapDispatchToProps = ( dispatch ) => ({
 	  resetPassword: ( email ) => {
 		dispatch( resetUserPassword( email ) );
 	}, 
 });
 
-export default connect( null, mapDispatchToProps )( ResetPassword );
+export default connect( mapStateToProps, mapDispatchToProps )( ResetPassword );
