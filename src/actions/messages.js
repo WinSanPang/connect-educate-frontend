@@ -1,6 +1,6 @@
 import { fetchData, success } from './utils';
 
-function fetchMessages(id) {
+function fetchMessages(user_id) {
     return ( dispatch ) => {
         mockResult( dispatch );
 
@@ -12,9 +12,54 @@ function fetchMessages(id) {
     }
 }
 
-function updateSelectedMessage(id) {
+function fetchMessageThread( task_id ) {
+    return dispatch => {
+        const response = [
+            {
+                'id': 1,
+                'user_id': 1,
+                'content': 'Jelly beans croissant tootsie roll marzipan. Jelly-o dessert donut lemon drops chupa chups danish. Bear claw lemon drops fruitcake. Gingerbread toffee tootsie roll toffee muffin jelly beans.',
+                'created_at': "2020-04-12T19:43:11.408Z",
+                'updated_at': "2020-04-12T19:43:11.408Z",
+                'task_id': 1
+            },                    
+            {
+                'id': 3,
+                'user_id': 1,
+                'content': 'Biscuit ice cream carrot cake cheesecake cupcake macaroon biscuit.',
+                'created_at': "2020-04-12T19:46:11.408Z",
+                'updated_at': "2020-04-12T19:46:11.408Z",
+                'task_id': 1
+            },                    
+            {
+                'id': 4,
+                'user_id': 13,
+                'content': 'Sesame snaps pastry bear claw candy canes gummi bears dessert liquorice sweet halvah. Soufflé chocolate bar marzipan sugar plum sugar plum.',
+                'created_at': "2020-04-12T19:49:11.408Z",
+                'updated_at': "2020-04-12T19:49:11.408Z",
+                'task_id': 1
+            },
+        ]
+
+        // fetchData( `/message-thread/${task_id}` )
+        //     .then(( result ) => {
+        //         dispatch(success('FETCH_MESSAGE_THREAD', result));
+        //     });
+
+        dispatch(success('FETCH_MESSAGE_THREAD', response));
+    }
+}
+
+function updateSelectedThread(id) {
     return dispatch => {
         dispatch(success('UPDATE_SELECTED_MESSAGE', {id}));
+    }
+}
+
+function sendMessage(data) {
+    return dispatch => {
+        dispatch(success('UPDATE_SELECTED_MESSAGE', ));
+        dispatch(fetchMessages(data));
     }
 }
 
@@ -87,5 +132,6 @@ const mockResult = (dispatch) => {
 
 export {
     fetchMessages,
-    updateSelectedMessage
+    updateSelectedThread,
+    fetchMessageThread
 }

@@ -3,7 +3,7 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 
 import { Feed } from 'semantic-ui-react';
-import { updateSelectedMessage } from 'actions';
+import { updateSelectedThread } from 'actions';
 import './message-item.css';
 
 class MessageListItem extends Component {
@@ -43,7 +43,7 @@ class MessageListItem extends Component {
 
 const mapDispatchToProps = ( dispatch ) => ({
 	updateSelectedMessage: ( id ) => {
-		dispatch( updateSelectedMessage( id ) );
+		dispatch( updateSelectedThread( id ) );
 	},
 });
 
