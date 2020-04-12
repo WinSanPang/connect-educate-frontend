@@ -60,7 +60,7 @@ export class MentorsList extends Component {
         <Container>
           <Grid columns={2}>
             <Grid.Column>
-              <Segment>
+              <Segment className='AskForHelpMentorsList__Card'>
                 <Image
                   size='small'
                   circular
@@ -89,19 +89,6 @@ export class MentorsList extends Component {
                     content='Tech'
                     icon='computer'/>
                 </Container>
-                <br/>
-                <Button 
-                  content='Request Help'
-                  size='medium'
-                  style={{
-                  marginBottom: '2%'
-                  }}
-                  floated='right'
-                  active={activeItem === 'request-help'}
-                  onClick={this.handleItemClick}
-                />
-                <br/>
-                <br/>
               </Segment>
             </Grid.Column>
             <Grid.Column>
@@ -134,19 +121,6 @@ export class MentorsList extends Component {
                     content='Tech'
                     icon='computer'/>
                 </Container>
-                <br/>
-                <Button 
-                  content='Request Help'
-                  size='medium'
-                  style={{
-                  marginBottom: '2%'
-                  }}
-                  floated='right'
-                  active={activeItem === 'request-help'}
-                  onClick={this.handleItemClick}
-                />
-                <br/>
-                <br/>
               </Segment>
             </Grid.Column>
           </Grid>
@@ -182,19 +156,6 @@ export class MentorsList extends Component {
                     content='Music'
                     icon='music'/>
                 </Container>
-                <br/>
-                <Button 
-                  content='Request Help'
-                  size='medium'
-                  style={{
-                  marginBottom: '2%'
-                  }}
-                  floated='right'
-                  active={activeItem === 'request-help'}
-                  onClick={this.handleItemClick}
-                />
-                <br/>
-                <br/>
               </Segment>
             </Grid.Column>
             <Grid.Column>
@@ -227,19 +188,6 @@ export class MentorsList extends Component {
                     content='Science'
                     icon='flask'/>
                 </Container>
-                <br/>
-                <Button 
-                  content='Request Help'
-                  size='medium'
-                  style={{
-                  marginBottom: '2%'
-                  }}
-                  floated='right'
-                  active={activeItem === 'request-help'}
-                  onClick={this.handleItemClick}
-                />
-                <br/>
-                <br/>
               </Segment>
             </Grid.Column>
           </Grid>

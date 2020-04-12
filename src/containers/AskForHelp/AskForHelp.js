@@ -26,6 +26,7 @@ export class AskForHelp extends Component {
           <Button 
             content='Request Help'
             size='huge'
+            href='/ask-a-question'
             style={{
               margin: '5%',
               fontSize: '40px',
@@ -35,10 +36,6 @@ export class AskForHelp extends Component {
             />
         </Container>
         <AskForHelpMentorsList/>
-        {/* <HomeHeader/>
-        <Divider style={{marginTop:'5%'}}></Divider>
-        <Divider></Divider>
-        <HomeResources/> */}
       </Aux>
     );
   }

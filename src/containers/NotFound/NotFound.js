@@ -1,7 +1,7 @@
 import React from 'react';
-import { Header, Button, Container } from 'semantic-ui-react';
+import { Header, Container } from 'semantic-ui-react';
 
-const NotFound = ( props ) => {
+const NotFound = () => {
     return (
         <Container textAlign='center'>
             <Header 

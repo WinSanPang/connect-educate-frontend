@@ -10,7 +10,7 @@ export class Home extends Component {
   render() {
 
     return (
-      <Aux>
+      <Aux className='home'>
         <HomeHeader/>
         <Divider style={{marginTop:'5%'}}></Divider>
         <HomeHowItWorks/>

@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { 
-	BrowserRouter as Router, 
-	Redirect
+	BrowserRouter as Router
 } from 'react-router-dom';
 import configureStore from './configureStore';
 
 import './index.css';
 import App from './App';
+
 import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();
