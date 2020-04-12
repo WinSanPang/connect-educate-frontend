@@ -28,6 +28,11 @@ const mockResult = (user, dispatch) => {
     dispatch(login(user));
 }
 
+const resetUserPassword = email => {
+    //I don't know
+}
+
 export {
-    userFetchLogin
+    userFetchLogin,
+    resetUserPassword
 }

@@ -11,6 +11,7 @@ import Layout from './components/Layout/Layout';
 import Home from './containers/Home/Home';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
+import ResetPassword from './containers/ResetPassword';
 import NotFound from './containers/NotFound';
 import AskForHelp from './containers/AskForHelp'
 import AskAQuestion from './containers/AskAQuestion';
@@ -30,6 +31,7 @@ class App extends Component {
         // TODO: Add User Token and isAuthorised to localStorage once user has been authorised
         localStorage.getItem('user') ? <Redirect to={{ pathname: '/login', state: '/messages' }}/> : <Login/>
       )} />
+      <Route path="/reset-password" component={ResetPassword}/>
       <Route path="/messages" render={() => (
         localStorage.getItem('user') ? <NotFound/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
       )}/>

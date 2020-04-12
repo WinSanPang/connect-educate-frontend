@@ -17,6 +17,12 @@ export default ( state = initialState, action ) => {
         case 'LOGIN_FAILURE': 
             newState.loginError = action.error;
             break;
+        case 'RESET_PASSWORD_SUCCESS':
+            newState.resetPassword = action.payload;
+            break;
+        case 'RESET_PASSWORD_FAIL':
+            newState.resetPasswordError = action.error;
+            break;
         default:
             break;
     }

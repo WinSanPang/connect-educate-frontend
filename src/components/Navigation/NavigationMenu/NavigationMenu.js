@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Menu, Image } from 'semantic-ui-react';
 
 import './NavigationMenu.css';
-import Logo from '../../../assets/logo-small.png';
 
 export default class NavigationMenu extends Component {
   state = {}
@@ -21,7 +20,7 @@ export default class NavigationMenu extends Component {
           href='/'
           >
           <Menu.Item>
-            <Image src={Logo}/>
+            <Image style={{height:'60px'}} src={process.env.PUBLIC_URL + '/assets/logo.png'}/>
           </Menu.Item>
 
           <Menu.Item
