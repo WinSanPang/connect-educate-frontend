@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 import { Feed } from 'semantic-ui-react';
-import './message-item.css';
+//import './message-item.css';
 
 class MessageListItem extends Component {
     render() {
@@ -12,12 +12,12 @@ class MessageListItem extends Component {
             <Feed.Event className="message-item__event">
                 <Feed.Content className="message-item__content">
                     <Feed.Summary className="message-item__summary">
-                        Homework Help Please
+                        Chocolate Cake
                         {/* <Feed.User> to do the event to click the person  */}
                         <Feed.Date>{feedDate.format('DD MMM')}</Feed.Date>
                     </Feed.Summary>
                     <Feed.Extra text>
-                        I need translation help for my 5 year old daughter's homework
+                        I'm a Card Message List Item
                     </Feed.Extra>
                     <Feed.Meta>
 

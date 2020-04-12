@@ -5,14 +5,15 @@ import { connect } from 'react-redux';
 import { isUserLoggedIn } from 'helpers';
 import { Grid, Button } from 'semantic-ui-react';
 
-import './messages.css';
 import Aux from 'hoc/Aux';
+import UnassignedMessageList from 'components/UnassignedMessageList';
+import Messages from 'containers/Messages';
 import MessageList from 'components/MessageList';
 import MessageChat from 'components/MessageChat';
-import UnassignedMessageList from 'components/UnassignedMessageList';
-import UnassignedMessages from 'containers/UnassignedMessages';
 
-class Messages extends Component {
+import './UnassignedMessages.css';
+
+class UnassignedMessages extends Component {
     state = {
         showUnassignedMessages: true,
         showMessages: false
@@ -22,9 +23,9 @@ class Messages extends Component {
         this.setState({showUnassignedMessages: false});
     } */
 
-    unassignedMessagesClickedHandler = () => {
+    myMessagesClickedHandler = () => {
         this.setState((prevState) => {
-            return { showUnassignedMessages: !prevState.showUnassignedMessages };
+            return { showMessages: !prevState.showMessages };
         } );
     }
 
@@ -35,7 +36,7 @@ class Messages extends Component {
     }
 
     render() {
-        const mockedMessages = [
+        const unassignedMessages = [
             {
                 'id': 1,
                 'from': 'test',
@@ -68,29 +69,25 @@ class Messages extends Component {
 
         let page = (
             <Aux>
-            <Button 
-                    onClick={this.unassignedMessagesClickedHandler}
-                    >Unassigned Messages</Button>
-                <Grid
-                    celled
-                    columns={12}>
-                    <Grid.Row stretched>
-                        <Grid.Column width={4}>
-                            <MessageList 
-                                messages={mockedMessages}
-                                />
+                <Button 
+                        onClick={this.unassignedMessagesClickedHandler}
+                        >My Messages</Button>
+                    <Grid
+                        celled
+                        columns={2}>
+                        <Grid.Column>
+                                <UnassignedMessageList 
+                                    messages={unassignedMessages}
+                                    />
                         </Grid.Column>
-                        <Grid.Column width={12}>
-                            <MessageChat/>
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>
-                </Aux>
+                    </Grid>
+                    </Aux>
+            
         )
 
-        if (this.state.showUnassignedMessages) {
+        if (this.state.showMessages) {
             page = (
-                <UnassignedMessages/>
+                <Messages/>
             )
         }
 
@@ -103,4 +100,4 @@ class Messages extends Component {
     }
 }
 
-export default Messages
+export default UnassignedMessages
