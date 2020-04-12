@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { fetchMessages } from 'actions';
 import { isUserLoggedIn } from 'helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -11,44 +12,25 @@ import MessageChat from 'components/MessageChat';
 import './messages.css';
 
 class Messages extends Component {
+    state = {};
 
     componentDidMount() {
         if(!isUserLoggedIn()) {
             return( <Redirect to="/login"/> );
         }
+        
+        const { fetchMessages } = this.props;
+        fetchMessages();
     }
 
     render() {
-        const mockedMessages = [
-            {
-                'id': 1,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 1,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            },
-            {
-                'id': 2,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 2,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            }
-        ]
+        const { messages, selectedMessage } = this.props;
+
+        if (!messages) {
+            return null;
+        }
+
+        const current = selectedMessage || messages[0];
 
         return (
             <div className="messages__container">
@@ -57,10 +39,13 @@ class Messages extends Component {
                     columns={12}>
                     <Grid.Row stretched>
                         <Grid.Column width={4}>
-                            <MessageList messages={mockedMessages}/>
+                            <MessageList 
+                                    messages={messages} 
+                                    selectedId={current.id} 
+                            />
                         </Grid.Column>
                         <Grid.Column width={12}>
-                            <MessageChat/>
+                            <MessageChat selectedMessage={current}/>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -70,4 +55,15 @@ class Messages extends Component {
     }
 }
 
-export default Messages
+const mapDispatchToProps = ( dispatch ) => ({
+	fetchMessages: ( id ) => {
+		dispatch( fetchMessages( id ) );
+	},
+});
+
+const mapStateToProps = ( state ) => ({
+    messages: state.messages,
+    selectedMessage: state.selectedMessage,
+});
+
+export default connect( mapStateToProps, mapDispatchToProps )( Messages );

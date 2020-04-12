@@ -4,9 +4,10 @@ import moment from 'moment';
 import './bubble.css';
 
 const Bubble = ( props ) => {
+    const { message } = props;
     const {
         content, from, created_at
-    } = props;
+    } = message;
 
     const host = from === 'Mel';
     const className = host ? 'bubble bubble--host' : 'bubble';

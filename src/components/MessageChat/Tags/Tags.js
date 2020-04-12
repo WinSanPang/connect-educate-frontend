@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Label } from 'semantic-ui-react';
-import './message-chat.css';
+import './tags.css';
 
 class Tags extends Component {
 
@@ -9,7 +9,7 @@ class Tags extends Component {
         // const { tags } = this.props;
         const tags = ['Language', 'Test'];
         const elements = Object.entries( tags ).map( item =>  {
-            return <Label>item</Label>
+            return <Label size={'large'}>item</Label>
         });
 
         return elements;
@@ -17,7 +17,7 @@ class Tags extends Component {
 
 
     render() {
-        return ( <div></div> );
+        return ( this.renderTags() );
     } 
 }
 
