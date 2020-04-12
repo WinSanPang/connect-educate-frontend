@@ -1,0 +1,17 @@
+.messages {
+    position: relative;
+    height: 100vh;
+}
+
+.messages::before {
+    content: '';
+    background: url('/assets/rainbow-pencils-pastel.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0.3;
+    width: 100%;
+}

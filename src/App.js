@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import 	{ 
   Switch, 
   Route,
-  Redirect
+  Redirect,
+  useLocation
 } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css'
 
@@ -19,6 +20,7 @@ import AskAQuestion from './containers/AskAQuestion';
 import Mentors from './containers/Mentors';
 import Resources from './containers/Resources/Resources';
 import Contact from './containers/Contact/Contact';
+import Messages from 'containers/Messages';
 
 
 class App extends Component {
@@ -35,7 +37,7 @@ class App extends Component {
       <Route path="/reset-password" component={ResetPassword}/>
       <Route path="/messages" render={() => (
         // TODO: Replace <NotFound/> placeholder
-        isUserLoggedIn() ? <NotFound/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
+        isUserLoggedIn() ? <Messages/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
       )}/>
       <Route path="/ask-for-help" component={AskForHelp} />
       <Route path="/ask-a-question" component={AskAQuestion} />
@@ -44,8 +46,8 @@ class App extends Component {
       <Route path="/contact" component={Contact}/>
       <Route path="*" component={NotFound}/>
     </Switch>
-
     )
+    
     return (
       <div className='App'>
       <Layout>

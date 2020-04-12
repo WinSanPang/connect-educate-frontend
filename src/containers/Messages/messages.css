@@ -1,0 +1,9 @@
+.messages__container {
+    padding: 0 24px;
+}
+
+@media only screen and (min-width: 768px) {
+    .messages__container {
+        padding: 0 64px;
+    }
+}

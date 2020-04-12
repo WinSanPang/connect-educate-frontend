@@ -4,14 +4,21 @@ import Aux from '../../hoc/Aux';
 import NavigationMenu from '../Navigation/NavigationMenu/NavigationMenu';
 import Footer from '../Navigation/NavigationMenu/Footer/Footer';
 
-const layout = ( props ) => (
-  <Aux>
-    <NavigationMenu/>
-    <main>
-      {props.children}
-    </main>
-    <Footer/>
-  </Aux>
-);
+import './layout.css';
+
+const layout = ( props ) => {
+  const className =  window.location.pathname.replace('/', '');
+  const hideFooter = className === 'messages';
+  
+  return (
+    <Aux>
+      <NavigationMenu/>
+      <main className={className}>
+        {props.children}
+      </main>
+      <Footer hideFooter={hideFooter}/>
+    </Aux>
+  )
+};
 
 export default layout;

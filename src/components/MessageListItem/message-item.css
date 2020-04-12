@@ -1,0 +1,32 @@
+.message-item__event {
+    cursor: pointer;
+}
+
+.message-item__summary {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-item__content {
+    position: relative;
+    margin-top: 8px;
+}
+
+.message-item__content::after {
+    border-bottom: solid 1px #ddd;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -1em;
+    right: -1em;
+}
+
+.message-item__event:last-of-type .message-item__content::after {
+    content: none;
+}
+
+.message-item__event:hover .message-item__summary {
+    /* Important needed because semantic ui */
+    font-weight: 900 !important;
+    color: #E68D05 !important;
+}
