@@ -22,6 +22,7 @@ import Mentors from './containers/Mentors';
 import Resources from './containers/Resources/Resources';
 import Contact from './containers/Contact/Contact';
 import Messages from 'containers/Messages';
+import querySubmitted from './containers/QuerySubmitted'
 
 
 class App extends Component {
@@ -43,6 +44,7 @@ class App extends Component {
       )}/>
       <Route path="/ask-for-help" component={AskForHelp} />
       <Route path="/ask-a-question" component={AskAQuestion} />
+      <Route path="/query-submitted" component={querySubmitted} />
       <Route path="/our-mentors" component={Mentors}/>
       <Route path="/resources" component={Resources}/>
       <Route path="/contact" component={Contact}/>
