@@ -1,0 +1,25 @@
+.login__header {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.login__header::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    border-bottom: solid 3px green;
+    left: 0;
+    width: 100%;
+}
+
+.login {
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+@media only screen and (min-width: 768px) {
+    .login {
+        padding: 64px;
+    }
+}

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Header, Button, Container } from 'semantic-ui-react';
 
 import Aux from '../../hoc/Aux';
-import Layout from '../../components/Layout/Layout';
 import AskForHelpHowItWorks from '../../components/AskForHelp/AskForHelpHowItWorks/AskForHelpHowItWorks';
 import AskForHelpMentorsList from '../../components/AskForHelp/AskForHelpMentorsList/AskForHelpMentorsList';
 
@@ -16,7 +15,6 @@ export class AskForHelp extends Component {
 
     return (
       <Aux>
-        <Layout/>
         <Header 
           as='h1'
           textAlign='center'

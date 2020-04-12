@@ -1,10 +1,10 @@
-import { fetchData, fetchSuccess } from 'actions/utils';
+import { fetchData, success } from './utils';
 
 export function fetchMessages(id) {
     return ( dispatch ) => {
         fetchData( `/api/messages/` )
             .then(( result ) => {
-                dispatch(fetchSuccess('FETCH_MESSAGES', result));
+                dispatch(success('FETCH_MESSAGES', result));
             })
 
     }

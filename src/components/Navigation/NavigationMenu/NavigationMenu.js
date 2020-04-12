@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Menu, Image } from 'semantic-ui-react';
 
-import Logo from '../../assets/logo-small.png';
+import './NavigationMenu.css';
+import Logo from '../../../assets/logo-small.png';
 
 export default class NavigationMenu extends Component {
   state = {}
@@ -12,16 +13,20 @@ export default class NavigationMenu extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu 
-        stackable 
-        size='huge'
-        borderless>
+      <div className='NavigationMenu'>
+        <Menu 
+          stackable 
+          size='huge'
+          borderless
+          href='/'
+          >
           <Menu.Item>
             <Image src={Logo}/>
           </Menu.Item>
 
           <Menu.Item
             name='Mentors'
+            href='/our-mentors'
             active={activeItem === 'mentors'}
             onClick={this.handleItemClick}
             position='right'
@@ -33,6 +38,7 @@ export default class NavigationMenu extends Component {
             name='Requests'
             active={activeItem === 'requests'}
             onClick={this.handleItemClick}
+            href='/resources'
           >
             Resources
           </Menu.Item>
@@ -41,6 +47,7 @@ export default class NavigationMenu extends Component {
             name='FAQ'
             active={activeItem === 'faq'}
             onClick={this.handleItemClick}
+            href='/faqs'
           >
             FAQ
           </Menu.Item>
@@ -49,10 +56,21 @@ export default class NavigationMenu extends Component {
             name='Contact'
             active={activeItem === 'contact'}
             onClick={this.handleItemClick}
+            href='/contact'
           >
             Contact
           </Menu.Item>
+
+          <Menu.Item
+            name='Login'
+            active={activeItem === 'login'}
+            onClick={this.handleItemClick}
+            href='/login'
+          >
+            Login
+          </Menu.Item>
         </Menu>
+      </div>
     )
   }
 }
