@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Menu, Image } from 'semantic-ui-react';
 
-import Logo from '../../assets/logo-small.png';
+import './NavigationMenu.css';
+import Logo from '../../../assets/logo-small.png';
 
 export default class NavigationMenu extends Component {
   state = {}
@@ -12,12 +13,13 @@ export default class NavigationMenu extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu 
-        stackable 
-        size='huge'
-        borderless
-        href='/'
-        >
+      <div className='NavigationMenu'>
+        <Menu 
+          stackable 
+          size='huge'
+          borderless
+          href='/'
+          >
           <Menu.Item>
             <Image src={Logo}/>
           </Menu.Item>
@@ -68,6 +70,7 @@ export default class NavigationMenu extends Component {
             Login
           </Menu.Item>
         </Menu>
+      </div>
     )
   }
 }
