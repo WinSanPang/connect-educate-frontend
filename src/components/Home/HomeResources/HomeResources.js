@@ -28,9 +28,9 @@ const HomeResources = () => (
             }}
           />
           <Header as='h2' icon>
-            Fun Activities
+          Learn Through Play
             <Header.Subheader style={{marginTop: '5%'}}>
-              Not sure how to keep your little one entertained? Click <a href='https://bradford.50thingstodo.org/app/os#!/50-things-to-do-before-youre-five'>here</a> for a list of 50 activities to do with children under 5
+            Click <a href='https://bradford.50thingstodo.org/app/os#!/50-things-to-do-before-youre-five'>here</a> for a list of 50 activities for under 5’s that you can easily do around the house.
             </Header.Subheader>
           </Header>
         </Grid.Column>
@@ -44,22 +44,22 @@ const HomeResources = () => (
             }}
             />
           <Header as='h2' icon>
-              Games
+              Games and Discovery
             <Header.Subheader style={{marginTop: '5%'}}>
-            Click <a href='https://www.bbc.co.uk/bitesize/collections/primary-games/1'>here</a> for a list of games that you and your child could play
+            Click <a href='https://www.bbc.co.uk/bitesize/collections/primary-games/1'>here</a> to play games and practice Maths, English and Science, or let your child’s imagination go outta space with <a href='https://www.nasa.gov/kidsclub/index.html '>Nasa's Kids Club</a>.
             </Header.Subheader>
           </Header>
         </Grid.Column>
         <Grid.Column>
           <Header as='h2' icon>
             <Icon 
-              name='book'
+              name='computer'
               size='massive'
               style={{padding:'10%'}}
               />
-                Stories
+                Trouble with Tech?
             <Header.Subheader style={{marginTop: '5%'}}>
-              For a list of multicultural books, click <a href='https://www.thisisbooklove.com/'>here</a> or find the perfect story in your language <a href='https://stories.audible.com/discovery'>here</a>. You can also discover more reading resources and the philosophy behind children's learning <a href='https://www.janeyates.net/45254287'>here</a>
+              Having trouble with technology? Click <a href='https://www.youtube.com/watch?v=QOUwumKCW7M'>here</a> for a guide on how to use Zoom or find out how to use Google Classroom <a href='https://www.youtube.com/watch?v=2Iowi-gmbys'>here</a>. Or get in touch with one of our mentors!
             </Header.Subheader>
           </Header>
         </Grid.Column>
