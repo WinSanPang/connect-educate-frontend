@@ -14,7 +14,7 @@ const Resources = () => (
         }}>
         Popular Resources
         <Header.Subheader>
-          We know it can be hard to know what activities or learning materials to use with your child, so we've listed a few to help get you started. See our Resources page <a href='/resources'>here</a> for the full list! 
+          We know it can be hard to know what activities or learning materials to use with your child, so here's a list to get you inspired
         </Header.Subheader>
     </Header>
     <Grid columns={3}>
