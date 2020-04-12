@@ -1,0 +1,11 @@
+.question-form{
+    width: 50%;
+    justify-content: center;
+    left: 25%;
+    position: absolute;
+}
+
+.dropdown-menu{
+    padding-top: 3px;
+    padding-bottom: 20px;
+}

@@ -8,7 +8,6 @@ export class AskAQuestion extends Component {
 
     return (
       <div>
-        <Layout/>
         <QuestionFrom/>
       </div>
     );
