@@ -4,15 +4,29 @@ import { connect } from 'react-redux';
 
 import { fetchMessages } from 'actions';
 import { isUserLoggedIn } from 'helpers';
-import { Grid } from 'semantic-ui-react';
-
-import MessageList from 'components/MessageList';
-import MessageChat from 'components/MessageChat';
+import { Grid, Button } from 'semantic-ui-react';
 
 import './messages.css';
+import Aux from 'hoc/Aux';
+import MessageList from 'components/MessageList';
+import MessageChat from 'components/MessageChat';
+import UnassignedMessages from 'containers/UnassignedMessages';
 
 class Messages extends Component {
-    state = {};
+    state = {
+        showUnassignedMessages: true,
+        showMessages: false
+    }
+
+    /* showMyMessagesHandler = () => {
+        this.setState({showUnassignedMessages: false});
+    } */
+
+    unassignedMessagesClickedHandler = () => {
+        this.setState((prevState) => {
+            return { showUnassignedMessages: !prevState.showUnassignedMessages };
+        } );
+    }
 
     componentDidMount() {
         if(!isUserLoggedIn()) {
@@ -32,8 +46,11 @@ class Messages extends Component {
 
         const current = selectedMessage || messages[0];
 
-        return (
-            <div className="messages__container">
+        let page = (
+            <Aux>
+            <Button 
+                    onClick={this.unassignedMessagesClickedHandler}
+                    >Unassigned Messages</Button>
                 <Grid
                     celled
                     columns={12}>
@@ -49,6 +66,18 @@ class Messages extends Component {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
+                </Aux>
+        )
+
+        if (this.state.showUnassignedMessages) {
+            page = (
+                <UnassignedMessages/>
+            )
+        }
+
+        return (
+            <div className="messages__container">
+                {page}
             </div>
 
         )

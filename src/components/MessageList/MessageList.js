@@ -24,7 +24,7 @@ class MessageList extends Component {
 
         return elements;
     }
-
+    
     render() {
         return (
             <Card className='message-list' fluid>
