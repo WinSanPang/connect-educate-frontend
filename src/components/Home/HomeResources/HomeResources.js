@@ -13,6 +13,9 @@ const HomeResources = () => (
         fontSize: '50px'
         }}>
         Popular Resources
+        <Header.Subheader>
+          We know it can be hard to know what activities or learning materials to use with your child, so we've listed a few to help get you started. See our Resources page <a href='/resources'>here</a> for the full list! 
+        </Header.Subheader>
     </Header>
     <Grid columns={3}>
       <Grid.Row>
@@ -25,9 +28,9 @@ const HomeResources = () => (
             }}
           />
           <Header as='h2' icon>
-            Resource 1
+            Fun Activities
             <Header.Subheader style={{marginTop: '5%'}}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula nec sem eget fringilla. Aliquam non lacus sed lacus vulputate mattis et aliquet nunc.
+              Not sure how to keep your little one entertained? Click <a href='https://bradford.50thingstodo.org/app/os#!/50-things-to-do-before-youre-five'>here</a> for a list of 50 activities to do with children under 5
             </Header.Subheader>
           </Header>
         </Grid.Column>

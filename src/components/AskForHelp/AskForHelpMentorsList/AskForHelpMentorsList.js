@@ -60,7 +60,7 @@ export class MentorsList extends Component {
         <Container>
           <Grid columns={2}>
             <Grid.Column>
-              <Segment>
+              <Segment className='AskForHelpMentorsList__Card'>
                 <Image
                   size='small'
                   circular

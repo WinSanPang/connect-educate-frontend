@@ -15,6 +15,8 @@ import NotFound from './containers/NotFound';
 import AskForHelp from './containers/AskForHelp'
 import AskAQuestion from './containers/AskAQuestion';
 import Mentors from './containers/Mentors';
+import Resources from './containers/Resources/Resources';
+import Contact from './containers/Contact/Contact';
 
 
 class App extends Component {
@@ -29,12 +31,13 @@ class App extends Component {
         localStorage.getItem('user') ? <Redirect to={{ pathname: '/login', state: '/messages' }}/> : <Login/>
       )} />
       <Route path="/messages" render={() => (
-        // TODO: Replace <NotFound/> placeholder
         localStorage.getItem('user') ? <NotFound/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
       )}/>
       <Route path="/ask-for-help" component={AskForHelp} />
-      <Route path="/our-mentors" component={Mentors}/>
       <Route path="/ask-a-question" component={AskAQuestion} />
+      <Route path="/our-mentors" component={Mentors}/>
+      <Route path="/resources" component={Resources}/>
+      <Route path="/contact" component={Contact}/>
       <Route path="*" component={NotFound}/>
     </Switch>
 
