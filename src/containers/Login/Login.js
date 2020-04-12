@@ -102,7 +102,7 @@ class Login extends Component {
                                 />
                             </Form.Field>
                             <Header>
-                                <Header.Subheader>Forgot your password? Click <a href='/reset-password'>here</a> to reset it</Header.Subheader>
+                                <Header.Subheader>Forgot your password? Click <a href='/forgot-password'>here</a> to reset it</Header.Subheader>
                             </Header>
                             <Message
                                 error
