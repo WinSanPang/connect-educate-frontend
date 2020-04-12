@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { fetchMessages } from 'actions';
 import { isUserLoggedIn } from 'helpers';
 import { Grid, Button } from 'semantic-ui-react';
 
@@ -9,7 +10,6 @@ import './messages.css';
 import Aux from 'hoc/Aux';
 import MessageList from 'components/MessageList';
 import MessageChat from 'components/MessageChat';
-import UnassignedMessageList from 'components/UnassignedMessageList';
 import UnassignedMessages from 'containers/UnassignedMessages';
 
 class Messages extends Component {
@@ -32,39 +32,19 @@ class Messages extends Component {
         if(!isUserLoggedIn()) {
             return( <Redirect to="/login"/> );
         }
+        
+        const { fetchMessages } = this.props;
+        fetchMessages();
     }
 
     render() {
-        const mockedMessages = [
-            {
-                'id': 1,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 1,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            },
-            {
-                'id': 2,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 2,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            }
-        ]
+        const { messages, selectedMessage } = this.props;
+
+        if (!messages) {
+            return null;
+        }
+
+        const current = selectedMessage || messages[0];
 
         let page = (
             <Aux>
@@ -77,11 +57,12 @@ class Messages extends Component {
                     <Grid.Row stretched>
                         <Grid.Column width={4}>
                             <MessageList 
-                                messages={mockedMessages}
-                                />
+                                    messages={messages} 
+                                    selectedId={current.id} 
+                            />
                         </Grid.Column>
                         <Grid.Column width={12}>
-                            <MessageChat/>
+                            <MessageChat selectedMessage={current}/>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -103,4 +84,15 @@ class Messages extends Component {
     }
 }
 
-export default Messages
+const mapDispatchToProps = ( dispatch ) => ({
+	fetchMessages: ( id ) => {
+		dispatch( fetchMessages( id ) );
+	},
+});
+
+const mapStateToProps = ( state ) => ({
+    messages: state.messages,
+    selectedMessage: state.selectedMessage,
+});
+
+export default connect( mapStateToProps, mapDispatchToProps )( Messages );

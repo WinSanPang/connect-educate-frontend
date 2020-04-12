@@ -1,6 +1,7 @@
 .messages__container {
     padding: 0 24px;
     height: 80vh;
+    line-height: 2rem !important;
 }
 
 .messages__container .grid {

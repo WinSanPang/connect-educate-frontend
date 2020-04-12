@@ -6,7 +6,7 @@ import { isUserLoggedIn } from 'helpers';
 import { Grid, Button } from 'semantic-ui-react';
 
 import Aux from 'hoc/Aux';
-import UnassignedMessageList from 'components/UnassignedMessageList';
+import UnassignedMessageList from 'components/UnassignedMessages/UnassignedMessageList';
 import Messages from 'containers/Messages';
 import MessageList from 'components/MessageList';
 import MessageChat from 'components/MessageChat';

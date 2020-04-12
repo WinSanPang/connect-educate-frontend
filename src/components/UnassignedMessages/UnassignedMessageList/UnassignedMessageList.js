@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Header, Grid, Container, Card, Feed } from 'semantic-ui-react';
 
 import Aux from 'hoc/Aux';
-import UnassignedMessageListItem from 'components/UnassignedMessageListItem';
+import UnassignedMessageListItem from 'components/UnassignedMessages/UnassignedMessageListItem';
 import './UnassignedMessageList.css';
 
 class UnassignedMessageList extends Component {

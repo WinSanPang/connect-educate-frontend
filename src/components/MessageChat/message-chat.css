@@ -15,9 +15,9 @@
     background-position: center;
     background-size: cover;
     position: absolute;
-    top: 0;
+    height: 100%;
     transform: rotate(180deg);
-    bottom: -24px;
+    bottom: 0;
     opacity: 0.06;
     width: 100%;
 }
@@ -26,6 +26,11 @@
     display: none;
 }
 
-.chat__input {
+.chat__input,
+.chat__tags {
     flex-grow: unset !important;
+}
+
+.chat__textarea textarea {
+    resize: none !important;
 }
