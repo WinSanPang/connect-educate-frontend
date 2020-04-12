@@ -27,8 +27,19 @@ const postData = ( endpoint, data ) => {
 	return response;
 }
 
+const patchData = ( endpoint, data ) => {
+    const response = axios({
+        method: 'patch',
+        url: `${config.API_URL}/${endpoint}`,
+        data
+    });
+
+	return response;
+}
+
 export {
     success, 
     fetchData,
     postData,
+    patchData
 }

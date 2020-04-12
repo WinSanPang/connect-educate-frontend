@@ -1,4 +1,4 @@
-import { fetchData, postData } from './utils';
+import { fetchData, postData, patchData } from './utils';
 
 const userFetchLogin = user => {
     const request = {};
@@ -63,12 +63,27 @@ const mockResult = (dispatch) => {
     }
 }
 
-const resetUserPassword = email => {
+const forgotPasswordRequest = user => {
     const request = {};
-    request.email = email;
+    request.user = user;
 
     return dispatch => {
-        return postData('users/password_reset', request)
+        return postData('users/password', request)
+            .then(response => {
+                dispatch({type: 'FORGOT_PASSWORD_SUCCESS', payload: true})
+            })
+            .catch(error => {
+                dispatch({type: 'FORGOT_PASSWORD_FAIL', payload: false})
+            })
+    }
+}
+
+const resetUserPassword = user => {
+    const request = {};
+    request.user = user;
+
+    return dispatch => {
+        return patchData('users/reset_password', request)
             .then(response => {
                 dispatch({type: 'RESET_PASSWORD_SUCCESS', payload: true})
             })
@@ -80,6 +95,7 @@ const resetUserPassword = email => {
 
 export {
     userFetchLogin,
+    forgotPasswordRequest,
     resetUserPassword,
     userRemoveLogin
 }

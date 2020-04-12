@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Segment } from "semantic-ui-react";
+import { Segment, Message } from "semantic-ui-react";
 
 import "./QuestionForm.css";
+import { validateEmail, validatePassword } from "./Validation";
 
 function QuestionForm() {
-  // Declare a new state variable, which we'll call "count"
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [language, setLanguage] = useState("");
   const [englishProficiency, setEnglishProficiency] = useState("");
   const [childsAge, setChildsAge] = useState("");
@@ -33,11 +34,16 @@ function QuestionForm() {
     );
   };
 
-  const radialOption = (optionName) => {
+  const radialOption = optionName => {
     return (
       <>
         <label>
-          <input name="skillLevel" type="radio" onChange={e => setEnglishProficiency(optionName)}/>
+          <input
+            name="skillLevel"
+            type="radio"
+            onChange={e => setEnglishProficiency(optionName)}
+            required
+          />
           {optionName}
         </label>
       </>
@@ -48,6 +54,10 @@ function QuestionForm() {
     return <option value={optionName}>{optionName}</option>;
   };
 
+  const errorMessage = message => {
+    return <div class="error">{message}</div>;
+  };
+
   return (
     <>
       <div class="question-form">
@@ -56,6 +66,15 @@ function QuestionForm() {
           <form class="ui three wide form">
             {textInput("First Name:", "first-name", setName)}
             {textInput("Email Address:", "email-address", setEmail)}
+            {email.length > 1 &&
+              !validateEmail(email) &&
+              errorMessage("Please enter a valid email address")}
+            {textInput("Password:", "password", setPassword)}
+            {password.length > 1 &&
+              !validatePassword(password) &&
+              errorMessage(
+                "Please enter a valid password. \nWhich must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              )}
             {textInput(
               "Preferred Language (if not English):",
               "preferred-language",
@@ -63,7 +82,7 @@ function QuestionForm() {
               "Preferred Language"
             )}
 
-            <form class="field" >
+            <form class="field">
               <label for="skillLevel">English proficiency:</label>
               <div class="inline fields">
                 {radialOption("Beginner")}
@@ -98,7 +117,6 @@ function QuestionForm() {
                 onChange={e => setQuery(e.target.value)}
               ></textarea>
             </div>
-
             <button class="ui button" type="submit">
               Submit
             </button>

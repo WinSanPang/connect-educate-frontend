@@ -1,0 +1,13 @@
+.query-submitted{
+    text-align: center
+}
+
+.c-btn{
+    color: black;
+    border: 1px solid black;
+    padding: 6px
+}
+
+.c-btn:hover{
+    color: grey
+}

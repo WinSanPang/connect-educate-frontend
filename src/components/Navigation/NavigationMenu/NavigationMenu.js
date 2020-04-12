@@ -37,20 +37,11 @@ class NavigationMenu extends Component {
           </Menu.Item>
 
           <Menu.Item
-            name='Mentors'
-            href='/our-mentors'
-            active={activeItem === 'mentors'}
-            onClick={this.handleItemClick}
-            position='right'
-          >
-            Mentors
-          </Menu.Item>
-
-          <Menu.Item
             name='Requests'
             active={activeItem === 'requests'}
             onClick={this.handleItemClick}
             href='/resources'
+            position='right'
           >
             Resources
           </Menu.Item>
