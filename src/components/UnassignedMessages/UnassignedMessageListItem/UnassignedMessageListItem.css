@@ -1,0 +1,16 @@
+.UnassignedMessageListItem__Card {
+  min-width: 500px !important;
+  min-height: 250px !important;
+}
+
+.UnassignedMessageListItem__CardContent {
+  text-align: left;
+}
+
+.UnassignedMessageListItem__CardHeader {
+  text-align: center;
+}
+
+.UnassignedMessageListItem__Button {
+  margin-top: 5% !important;
+}

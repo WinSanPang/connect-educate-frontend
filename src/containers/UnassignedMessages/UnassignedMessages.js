@@ -3,13 +3,12 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { isUserLoggedIn } from 'helpers';
-import { Grid, Button } from 'semantic-ui-react';
+import { Header, Card, Grid, Button } from 'semantic-ui-react';
 
+import './UnassignedMessages.css';
 import Aux from 'hoc/Aux';
-import UnassignedMessageList from 'components/UnassignedMessageList';
+import UnassignedMessageList from 'components/UnassignedMessages/UnassignedMessageList';
 import Messages from 'containers/Messages';
-import MessageList from 'components/MessageList';
-import MessageChat from 'components/MessageChat';
 
 import './UnassignedMessages.css';
 
@@ -64,21 +63,49 @@ class UnassignedMessages extends Component {
                         'created_at': Date.now()
                     }
                 ]
+            },
+            {
+                'id': 3,
+                'from': 'test',
+                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
+                'created_at': Date.now(),
+                'messages': [
+                    {
+                        'id': 3,
+                        'from': 'user',
+                        'content': 'hdfjsdghsjdf',
+                        'created_at': Date.now()
+                    }
+                ]
+            },
+            {
+                'id': 4,
+                'from': 'test',
+                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
+                'created_at': Date.now(),
+                'messages': [
+                    {
+                        'id': 4,
+                        'from': 'user',
+                        'content': 'hdfjsdghsjdf',
+                        'created_at': Date.now()
+                    }
+                ]
             }
         ]
 
         let page = (
             <Aux>
                 <Button 
-                        onClick={this.unassignedMessagesClickedHandler}
-                        >My Messages</Button>
-                    <Grid
-                        celled
-                        columns={2}>
-                        <Grid.Column>
-                                <UnassignedMessageList 
-                                    messages={unassignedMessages}
-                                    />
+                    onClick={this.unassignedMessagesClickedHandler}
+                    >My Messages</Button>
+                    <Grid celled className='UnassignedMessages'>
+                        <Grid.Column className='UnassignedMessages__Grid'>
+                        <Header.Content className='UnassignedMessages_Header'>Unassigned Messages</Header.Content>
+                        <Card.Group className='UnassignedMessages__CardGroup'>
+                            <UnassignedMessageList 
+                                unassignedMessages={unassignedMessages}/>
+                        </Card.Group>
                         </Grid.Column>
                     </Grid>
                     </Aux>

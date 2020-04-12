@@ -9,7 +9,6 @@ import './messages.css';
 import Aux from 'hoc/Aux';
 import MessageList from 'components/MessageList';
 import MessageChat from 'components/MessageChat';
-import UnassignedMessageList from 'components/UnassignedMessageList';
 import UnassignedMessages from 'containers/UnassignedMessages';
 
 class Messages extends Component {
