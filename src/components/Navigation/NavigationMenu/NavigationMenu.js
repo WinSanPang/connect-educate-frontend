@@ -10,12 +10,6 @@ import Logo from '../../../assets/logo-small.png';
 class NavigationMenu extends Component {
   state = {};
 
-  componentDidMount() {
-    if (isUserLoggedIn()) {
-      this.setState({ loggedIn: true })
-    }
-  }
-
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   handleLogoutClick(e, args) {
@@ -28,9 +22,8 @@ class NavigationMenu extends Component {
   }
 
   render() {
-    const { activeItem, loggedIn } = this.state
-
-    console.log(this.props);
+    const { activeItem } = this.state
+    const { user } = this.props;
 
     return (
       <div className='NavigationMenu'>
@@ -78,7 +71,7 @@ class NavigationMenu extends Component {
             onClick={this.handleLogoutClick.bind(this)}
             href='/login'
           >
-            { loggedIn ? 'Logout' : 'Login' } 
+            { user || isUserLoggedIn() ? 'Logout' : 'Login' } 
           </Menu.Item>
         </Menu>
       </div>
@@ -92,4 +85,9 @@ const mapDispatchToProps = ( dispatch ) => ({
 	},
 });
 
-export default connect( null, mapDispatchToProps )( NavigationMenu );
+const mapStateToProps = ( state ) => ({
+	user: state.user,
+});
+
+
+export default connect( mapStateToProps, mapDispatchToProps )( NavigationMenu );
