@@ -1,5 +1,10 @@
 .messages__container {
     padding: 0 24px;
+    height: 80vh;
+}
+
+.messages__container .grid {
+    height: 100%;
 }
 
 @media only screen and (min-width: 768px) {

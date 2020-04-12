@@ -1,0 +1,3 @@
+.message-list .content:first-of-type {
+    flex-grow: unset;
+}
