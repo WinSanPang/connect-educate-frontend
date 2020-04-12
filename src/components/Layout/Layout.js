@@ -1,13 +1,16 @@
 import React from 'react';
 
 import Aux from '../../hoc/Aux';
+import NavigationMenu from '../Navigation/NavigationMenu/NavigationMenu';
+import Footer from '../Navigation/NavigationMenu/Footer/Footer';
 
 const layout = ( props ) => (
   <Aux>
-    <div>Toolbar, SideDrawer, Backdrop</div>
+    <NavigationMenu/>
     <main>
       {props.children}
     </main>
+    <Footer/>
   </Aux>
 );
 

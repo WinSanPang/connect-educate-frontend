@@ -1,0 +1,14 @@
+.Contact {
+  text-align: center;
+}
+
+.Contact__Header {
+  font-size: 50px;
+  margin-top: 5%;
+}
+
+.Contact__Subheader {
+  font-size: 20px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
