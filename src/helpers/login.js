@@ -1,8 +1,8 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
+export const isUserLoggedIn = () => {
+    if (localStorage) {
+        const user = JSON.parse(localStorage.getItem('user'));
+        return user && user.isAuthenticated && user.token
+    }
 
-export const isUserLoggedIn = (user) => {
-    if (!!user) {
-        return <Redirect to="/messages"/>
-    };
+    return false;
 }
