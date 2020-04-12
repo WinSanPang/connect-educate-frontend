@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { isUserLoggedIn } from 'helpers';
-import { Header, Card, Grid, Button } from 'semantic-ui-react';
+import { Header, Container, Card, Grid, Button, Dropdown } from 'semantic-ui-react';
 
 import './UnassignedMessages.css';
 import Aux from 'hoc/Aux';
@@ -12,20 +12,36 @@ import Messages from 'containers/Messages';
 
 import './UnassignedMessages.css';
 
+const skills = [
+    { key: 'art', text: 'Art', value: 'art' },
+    { key: 'maths', text: 'Maths', value: 'maths' },
+    { key: 'music', text: 'Music', value: 'music' },
+    { key: 'science', text: 'Science', value: 'science' },
+    { key: 'technology', text: 'Technology', value: 'technology' },
+  ]
+  
+  const languages = [
+    { key: 'english', text: 'English', value: 'english' },
+    { key: 'cantonese', text: '廣東話', value: 'cantonese' },
+    { key: 'german', text: 'Deutsche', value: 'german' },
+    { key: 'hungarian', text: 'Magyar', value: 'hungarian' },
+    { key: 'polish', text: 'Polskie', value: 'polish' },
+    { key: 'punjabi', text: 'ਪੰਜਾਬੀ', value: 'punjabi' },
+    { key: 'urdu', text: 'اردو', value: 'urdu' },
+  ]
+
 class UnassignedMessages extends Component {
     state = {
         showUnassignedMessages: true,
-        showMessages: false
     }
 
     /* showMyMessagesHandler = () => {
         this.setState({showUnassignedMessages: false});
     } */
 
-    myMessagesClickedHandler = () => {
-        this.setState((prevState) => {
-            return { showMessages: !prevState.showMessages };
-        } );
+    myMessagesClickedHandler = (event) => {
+        event.preventDefault();
+        this.setState((prevState) => ({showUnassignedMessages: !prevState.showUnassignedMessages}));
     }
 
     componentDidMount() {
@@ -91,35 +107,82 @@ class UnassignedMessages extends Component {
                         'created_at': Date.now()
                     }
                 ]
+            },
+            {
+                'id': 5,
+                'from': 'test',
+                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
+                'created_at': Date.now(),
+                'messages': [
+                    {
+                        'id': 5,
+                        'from': 'user',
+                        'content': 'hdfjsdghsjdf',
+                        'created_at': Date.now()
+                    }
+                ]
+            },
+            {
+                'id': 6,
+                'from': 'test',
+                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
+                'created_at': Date.now(),
+                'messages': [
+                    {
+                        'id': 6,
+                        'from': 'user',
+                        'content': 'hdfjsdghsjdf',
+                        'created_at': Date.now()
+                    }
+                ]
             }
         ]
 
         let page = (
             <Aux>
                 <Button 
-                    onClick={this.unassignedMessagesClickedHandler}
+                    onClick={this.myMessagesClickedHandler}
                     >My Messages</Button>
-                    <Grid celled className='UnassignedMessages'>
+                    <Container fluid className='UnassignedMessages'>
                         <Grid.Column className='UnassignedMessages__Grid'>
                         <Header.Content className='UnassignedMessages_Header'>Unassigned Messages</Header.Content>
+                        <Container
+                            style={{marginBottom: '2%'}}>
+                                <Header>
+                                Filter by:
+                                </Header>
+                                <Dropdown 
+                                placeholder='Skills' 
+                                multiple 
+                                selection 
+                                options={skills} 
+                                style={{marginRight: '2%'}}
+                                />
+                                <Dropdown 
+                                placeholder='Languages' 
+                                multiple 
+                                selection 
+                                options={languages} 
+                                />
+                            </Container>
                         <Card.Group className='UnassignedMessages__CardGroup'>
                             <UnassignedMessageList 
                                 unassignedMessages={unassignedMessages}/>
                         </Card.Group>
                         </Grid.Column>
-                    </Grid>
+                    </Container>
                     </Aux>
             
         )
 
-        if (this.state.showMessages) {
+        if (!this.state.showUnassignedMessages) {
             page = (
                 <Messages/>
             )
         }
 
         return (
-            <div className="messages__container">
+            <div>
                 {page}
             </div>
 
