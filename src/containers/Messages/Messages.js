@@ -14,8 +14,8 @@ import UnassignedMessages from 'containers/UnassignedMessages';
 
 class Messages extends Component {
     state = {
-        showUnassignedMessages: true,
-        showMessages: false
+        showUnassignedMessages: false,
+        showMessages: true
     }
 
     /* showMyMessagesHandler = () => {

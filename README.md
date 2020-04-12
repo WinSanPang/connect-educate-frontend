@@ -21,6 +21,8 @@ __Prerequisites__
 >
 >`bundle install`
 >
+>`rails db:migrate`
+>
 >`rails s`
 
 ## Frontend
