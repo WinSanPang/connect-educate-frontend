@@ -7,6 +7,7 @@ import 	{
 import 'semantic-ui-css/semantic.min.css'
 
 import './App.css';
+import { isUserLoggedIn } from 'helpers';
 import Layout from './components/Layout/Layout';
 import Home from './containers/Home/Home';
 import Signup from './containers/Signup';
@@ -26,11 +27,11 @@ class App extends Component {
       <Route path="/volunteer-with-us" component={Signup} />
       <Route path="/login" render={() => (
         // TODO: Add User Token and isAuthorised to localStorage once user has been authorised
-        localStorage.getItem('user') ? <Redirect to={{ pathname: '/login', state: '/messages' }}/> : <Login/>
+        isUserLoggedIn() ? <Redirect to="/messages" /> : <Login/>
       )} />
       <Route path="/messages" render={() => (
         // TODO: Replace <NotFound/> placeholder
-        localStorage.getItem('user') ? <NotFound/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
+        isUserLoggedIn() ? <NotFound/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
       )}/>
       <Route path="/ask-for-help" component={AskForHelp} />
       <Route path="/our-mentors" component={Mentors}/>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import {    
     Input, 
     Button, 
@@ -19,15 +20,33 @@ class Login extends Component {
         show: false
     }
 
-    handlePasswordClick = event => {
-        this.setState((prevState) => ({show: !prevState.show}));
+    handleSubmit = event => {
         event.preventDefault();
+        const { loginUser } = this.props;
+        const data = new FormData(event.target);
+
+        const username = data.get('username');
+        const password = data.get('password');
+
+        if (username && password){
+            loginUser({
+                'email': username,
+                'password': password,
+            });
+        }
+    }
+
+    handlePasswordClick = event => {
+        event.preventDefault();
+        this.setState((prevState) => ({show: !prevState.show}));
     }
 
     render() {
         const { loginError, loginUser, user } = this.props;
 
-        isUserLoggedIn(user);
+        if (isUserLoggedIn()) {
+            return ( <Redirect to="/messages"/> );
+        }
 
         const { show } = this.state;
         const passwordType = show ? 'text' : 'password';
@@ -36,15 +55,15 @@ class Login extends Component {
             <div className='login'>   
                 <Card 
                     fluid 
-                    color='green' 
+                    color='orange' 
                     centered 
                     raised
                 >
                     <Card.Content textAlign='center'>
                         <Image
                             centered
-                            size='tiny'
-                            src={process.env.PUBLIC_URL + '/assets/logo.png'}
+                            size='small'
+                            src={process.env.PUBLIC_URL + '/assets/orange-pencil.png'}
                         />
                         <Header 
                             as='h1' 
@@ -57,7 +76,7 @@ class Login extends Component {
                         <Form 
                             size='large'
                             error={!!loginError}
-                            onSubmit={loginUser}>
+                            onSubmit={this.handleSubmit}>
                             <Form.Field
                                 id='username'
                                 control={Input}
