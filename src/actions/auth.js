@@ -63,9 +63,9 @@ const mockResult = (dispatch) => {
     }
 }
 
-const forgotPasswordRequest = email => {
+const forgotPasswordRequest = user => {
     const request = {};
-    request.email = email;
+    request.user = user;
 
     return dispatch => {
         return postData('users/password', request)
@@ -78,7 +78,7 @@ const forgotPasswordRequest = email => {
     }
 }
 
-const resetUserPassword = newPassword => {
+const resetUserPassword = user => {
     const request = {};
     request.user = user;
 
