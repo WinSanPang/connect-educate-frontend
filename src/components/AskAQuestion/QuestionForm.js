@@ -4,7 +4,7 @@ import { Segment, Message } from "semantic-ui-react";
 import "./QuestionForm.css";
 import { validateEmail, validatePassword } from "./Validation";
 
-import sendQuery from "../../actions/auth"
+import { sendQuery } from "../../actions/auth"
 
 function QuestionForm() {
   const [name, setName] = useState("");
