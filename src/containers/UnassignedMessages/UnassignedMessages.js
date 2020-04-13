@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { isUserLoggedIn } from 'helpers';
@@ -40,8 +40,8 @@ class UnassignedMessages extends Component {
     } */
 
     myMessagesClickedHandler = (event) => {
+        this.props.history.push('/messages');
         event.preventDefault();
-        this.setState((prevState) => ({showUnassignedMessages: !prevState.showUnassignedMessages}));
     }
 
     componentDidMount() {
@@ -191,4 +191,4 @@ class UnassignedMessages extends Component {
     }
 }
 
-export default UnassignedMessages
+export default withRouter(UnassignedMessages);

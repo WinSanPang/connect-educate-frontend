@@ -23,6 +23,13 @@ class NavigationMenu extends Component {
   render() {
     const { activeItem } = this.state
     const { user } = this.props;
+    const Messages = ( 
+          <Menu.Item
+              name='Requests'
+              active={activeItem === 'login'}
+              onClick={this.handleItemClick}
+              href='/messages'
+            ></Menu.Item> );
 
     return (
       <div className='NavigationMenu'>
@@ -54,6 +61,8 @@ class NavigationMenu extends Component {
           >
             Contact
           </Menu.Item>
+
+          { user || isUserLoggedIn() ? Messages : '' }
 
           <Menu.Item
             name='Login'

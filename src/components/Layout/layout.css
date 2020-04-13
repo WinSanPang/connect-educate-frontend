@@ -14,4 +14,5 @@
     bottom: 0;
     opacity: 0.3;
     width: 100%;
+    z-index: -100;
 }

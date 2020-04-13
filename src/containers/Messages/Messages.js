@@ -43,7 +43,7 @@ class Messages extends Component {
             <Aux>
             <Button 
                 href='/unassigned-messages'
-                >Unassigned Messages</Button>
+                >Unassigned Requests</Button>
                 <Grid
                     celled
                     columns={12}>

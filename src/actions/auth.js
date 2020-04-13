@@ -1,4 +1,5 @@
 import { fetchData, postData, patchData } from './utils';
+import history from '../helpers/history';
 
 const userFetchLogin = user => {
     const request = {};
@@ -59,6 +60,7 @@ const mockResult = (dispatch) => {
     }
     
     if (addToLocal(response.payload)) {
+        history.push('/messages');
         dispatch(login(response));
     }
 }
