@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { connect } from 'react-redux';
 import { Segment, Message } from "semantic-ui-react";
 
 import "./QuestionForm.css";
 import { validateEmail, validatePassword } from "./Validation";
 
-import { sendQuery } from "../../actions/auth"
+import { sendQuery } from "../../actions/askAQuestion";
 
 function QuestionForm() {
   const [name, setName] = useState("");
@@ -152,4 +153,10 @@ function QuestionForm() {
   );
 }
 
-export default QuestionForm;
+const mapDispatchToProps = ( dispatch ) => ({
+	sendQueryData: ( email, name, password, language, englishProficiency, query, subject, childsAge, formatData ) => {
+		dispatch( sendQuery( formatData ) );
+	},
+});
+
+export default connect( null, mapDispatchToProps )( QuestionForm );
