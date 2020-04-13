@@ -5,22 +5,20 @@ import MessageListItem from 'components/MessageListItem';
 import './message-list.css';
 
 class MessageList extends Component {
-    componentWillUpdate(prevProps, prevState) {
-        console.log('sdfsdf');
-    }
-
     renderMessageListItems() {
         const { messages, selectedId } = this.props;
-        const elements = Object.entries( messages ).map( ([i, item]) =>  {
-            const active = selectedId === item.id;
-            return (
-                <MessageListItem
-                    key={i} 
-                    feedItem={item} 
-                    active={active}
-                /> 
-            );
-        });
+        const elements = messages
+                            .map( item =>  {
+                                const active = selectedId === item.id;
+    
+                                return (
+                                    <MessageListItem
+                                        key={item.id} 
+                                        feedItem={item} 
+                                        active={active}
+                                    /> 
+                                );
+                            });
 
         return elements;
     }
