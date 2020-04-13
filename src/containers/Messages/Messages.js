@@ -42,7 +42,7 @@ class Messages extends Component {
         let page = (
             <Aux>
             <Button 
-                onClick={this.unassignedMessagesClickedHandler}
+                href='/unassigned-messages'
                 >Unassigned Messages</Button>
                 <Grid
                     celled
