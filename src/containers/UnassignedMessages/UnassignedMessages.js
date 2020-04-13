@@ -141,6 +141,7 @@ class UnassignedMessages extends Component {
         let page = (
             <Aux>
                 <Button 
+                    className='UnassignedMessages__Button'
                     onClick={this.myMessagesClickedHandler}
                     >My Messages</Button>
                     <Container fluid className='UnassignedMessages'>
