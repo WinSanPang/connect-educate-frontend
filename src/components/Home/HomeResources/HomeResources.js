@@ -30,7 +30,7 @@ const HomeResources = () => (
           <Header as='h2' icon>
           Learn Through Play
             <Header.Subheader style={{marginTop: '5%'}}>
-            Click <a href='https://bradford.50thingstodo.org/app/os#!/50-things-to-do-before-youre-five'>here</a> for a list of 50 activities for under 5’s that you can easily do around the house.
+            Click <a href='https://bradford.50thingstodo.org/app/os#!/50-things-to-do-before-youre-five' target='_blank'>here</a> for a list of 50 activities for under 5’s that you can easily do around the house.
             </Header.Subheader>
           </Header>
         </Grid.Column>
@@ -46,7 +46,7 @@ const HomeResources = () => (
           <Header as='h2' icon>
               Games and Discovery
             <Header.Subheader style={{marginTop: '5%'}}>
-            Click <a href='https://www.bbc.co.uk/bitesize/collections/primary-games/1'>here</a> to play games and practice Maths, English and Science, or let your child’s imagination go outta space with <a href='https://www.nasa.gov/kidsclub/index.html '>Nasa's Kids Club</a>.
+            Click <a href='https://www.bbc.co.uk/bitesize/collections/primary-games/1' target='_blank'>here</a> to play games and practice Maths, English and Science, or let your child’s imagination go outta space with <a href='https://www.nasa.gov/kidsclub/index.html' target='_blank'>Nasa's Kids Club</a>.
             </Header.Subheader>
           </Header>
         </Grid.Column>
@@ -59,7 +59,7 @@ const HomeResources = () => (
               />
                 Trouble with Tech?
             <Header.Subheader style={{marginTop: '5%'}}>
-              Having trouble with technology? Click <a href='https://www.youtube.com/watch?v=QOUwumKCW7M'>here</a> for a guide on how to use Zoom or find out how to use Google Classroom <a href='https://www.youtube.com/watch?v=2Iowi-gmbys'>here</a>. Or get in touch with one of our mentors!
+              Having trouble with technology? Click <a href='https://www.youtube.com/watch?v=QOUwumKCW7M' target='_blank'>here</a> for a guide on how to use Zoom or find out how to use Google Classroom <a href='https://www.youtube.com/watch?v=2Iowi-gmbys' target='_blank'>here</a>. Or get in touch with one of our mentors!
             </Header.Subheader>
           </Header>
         </Grid.Column>
