@@ -26,7 +26,7 @@ class MessageListItem extends Component {
                 <Feed.Content className="message-item__content">
                     <Feed.Summary className="message-item__summary">
                         <span className="message-item__user">{feedItem.from}</span>
-                        <Feed.Date>{feedDate.format('DD MMM')}</Feed.Date>
+                        <Feed.Date>{feedDate.format('DD MMM HH:mm')}</Feed.Date>
                     </Feed.Summary>
                     <Feed.Extra className="message-item__text" text>
                         { messages.slice(-1)[0].content.slice(0, 80) }...

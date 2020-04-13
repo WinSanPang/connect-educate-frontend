@@ -72,25 +72,25 @@ const mockResult = (dispatch) => {
                 'id': 1,
                 'from': 'test',
                 'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
+                'created_at': "2020-04-12T19:49:11.408Z",
                 'messages': [
                     {
                         'id': 1,
                         'from': 'user',
                         'content': 'Jelly beans croissant tootsie roll marzipan. Jelly-o dessert donut lemon drops chupa chups danish. Bear claw lemon drops fruitcake. Gingerbread toffee tootsie roll toffee muffin jelly beans.',
-                        'created_at': Date.now()
+                        'created_at': "2020-04-12T19:51:11.408Z",
                     },                    
                     {
                         'id': 3,
                         'from': 'user',
                         'content': 'Biscuit ice cream carrot cake cheesecake cupcake macaroon biscuit.',
-                        'created_at': Date.now()
+                        'created_at': "2020-04-12T18:51:11.408Z",
                     },                    
                     {
                         'id': 4,
                         'from': 'Mel',
                         'content': 'Sesame snaps pastry bear claw candy canes gummi bears dessert liquorice sweet halvah. Soufflé chocolate bar marzipan sugar plum sugar plum.',
-                        'created_at': Date.now()
+                        'created_at': "2020-04-12T18:31:11.408Z",
                     },
                 ]
             },
@@ -98,13 +98,13 @@ const mockResult = (dispatch) => {
                 'id': 2,
                 'from': 'Another Test User',
                 'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
+                'created_at': "2020-04-13T19:49:11.408Z",
                 'messages': [
                     {
                         'id': 2,
                         'from': 'abc',
                         'content': 'Cake sesame snaps chocolate cake cheesecake cotton candy cupcake. Gingerbread cupcake muffin halvah macaroon sugar plum icing. Sweet roll brownie dessert bear claw dragée sesame snaps. Apple pie toffee candy canes bear claw.',
-                        'created_at': Date.now()
+                        'created_at': "2020-04-13T19:49:11.408Z",
                     }
                 ]
             },
@@ -112,7 +112,7 @@ const mockResult = (dispatch) => {
                 'id': 3,
                 'from': 'Third Test User',
                 'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': '2020-02-01',
+                'created_at': "2020-02-01T13:49:11.408Z",
                 'messages': [
                     {
                         'id': 2,
@@ -125,7 +125,11 @@ const mockResult = (dispatch) => {
         }
     };
 
-    dispatch(success('FETCH_MESSAGES', response.payload));
+    const messages = Object.entries(response.payload.messages)
+                        .map(([,item]) => item)
+                        .sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at));
+
+    dispatch(success('FETCH_MESSAGES', { 'messages': messages }));
 }
 
 
@@ -134,4 +138,4 @@ export {
     fetchMessages,
     updateSelectedThread,
     fetchMessageThread
-}
+ }

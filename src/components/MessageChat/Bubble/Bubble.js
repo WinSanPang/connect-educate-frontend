@@ -25,7 +25,7 @@ const Bubble = ( props ) => {
                 <div className='bubble__text'>
                     <span>{content}</span>
                 </div>
-                <div className='bubble__date'>{chatDate.format('DD MMM')}</div>
+                <div className='bubble__date'>{chatDate.format('DD MMM HH:mm')}</div>
             </div>
 		</div>
 	);
