@@ -13,6 +13,7 @@ import {
 
 import { userFetchLogin } from 'actions';
 import { isUserLoggedIn } from 'helpers';
+import history from 'helpers/history';
 import './login.css';
 
 class Login extends Component {
@@ -45,14 +46,16 @@ class Login extends Component {
         const { loginError, loginUser, user } = this.props;
 
         if (isUserLoggedIn()) {
-            return ( <Redirect to="/messages"/> );
+            return ( <Redirect to={{
+                pathname: '/messages',
+            }}/> );
         }
 
         const { show } = this.state;
         const passwordType = show ? 'text' : 'password';
 
         return (
-            <div className='login'>   
+            <div className='login__container'>   
                 <Card 
                     fluid 
                     color='orange' 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { isUserLoggedIn } from 'helpers';
@@ -40,8 +40,8 @@ class UnassignedMessages extends Component {
     } */
 
     myMessagesClickedHandler = (event) => {
+        this.props.history.push('/messages');
         event.preventDefault();
-        this.setState((prevState) => ({showUnassignedMessages: !prevState.showUnassignedMessages}));
     }
 
     componentDidMount() {
@@ -141,11 +141,12 @@ class UnassignedMessages extends Component {
         let page = (
             <Aux>
                 <Button 
+                    className='UnassignedMessages__Button'
                     onClick={this.myMessagesClickedHandler}
                     >My Messages</Button>
                     <Container fluid className='UnassignedMessages'>
                         <Grid.Column className='UnassignedMessages__Grid'>
-                        <Header.Content className='UnassignedMessages_Header'>Unassigned Messages</Header.Content>
+                        <Header.Content className='UnassignedMessages_Header'>Unassigned Requests</Header.Content>
                         <Container
                             style={{marginBottom: '2%'}}>
                                 <Header>
@@ -190,4 +191,4 @@ class UnassignedMessages extends Component {
     }
 }
 
-export default UnassignedMessages
+export default withRouter(UnassignedMessages);

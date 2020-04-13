@@ -42,8 +42,8 @@ class Messages extends Component {
         let page = (
             <Aux>
             <Button 
-                href='/unassigned-messages'
-                >Unassigned Messages</Button>
+                href='/unassigned-requests'
+                >Unassigned Requests</Button>
                 <Grid
                     celled
                     columns={12}>

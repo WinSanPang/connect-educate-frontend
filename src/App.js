@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import 	{ 
   Switch, 
   Route,
-  Redirect,
-  useLocation
+  Redirect
 } from 'react-router-dom';
+
 import 'semantic-ui-css/semantic.min.css'
 
 import './App.css';
@@ -28,40 +28,41 @@ import querySubmitted from './containers/QuerySubmitted'
 
 class App extends Component {
   render() {
+
     let routes = (
       <Switch>
-      <Route path="/" exact={true} component={Home} />
-      
-      <Route path="/volunteer-with-us" component={Signup} />
-      <Route path="/login" render={() => (
-        // TODO: Add User Token and isAuthorised to localStorage once user has been authorised
-        isUserLoggedIn() ? <Redirect to="/messages" /> : <Login/>
-      )} />
-      <Route path="/forgot-password" component={ForgotPassword}/>
-      <Route path="/reset-password" component={ResetPassword}/>
-      <Route path="/messages" render={() => (
-        // TODO: Replace <NotFound/> placeholder
-        isUserLoggedIn() ? <Messages/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
-      )}/>
-      <Route path="/unassigned-messages" render={() => (
-        // TODO: Replace <NotFound/> placeholder
-        isUserLoggedIn() ? <UnassignedMessages/> : <Redirect to={{ pathname: '/login', state: '/unassigned-messages' }}/>
-      )}/>
-      <Route path="/ask-for-help" component={AskForHelp} />
-      <Route path="/ask-a-question" component={AskAQuestion} />
-      <Route path="/query-submitted" component={querySubmitted} />
-      <Route path="/our-mentors" component={Mentors}/>
-      <Route path="/resources" component={Resources}/>
-      <Route path="/contact" component={Contact}/>
-      <Route path="*" component={NotFound}/>
-    </Switch>
+        <Route path="/" exact={true} component={Home} />
+        
+        <Route path="/volunteer-with-us" component={Signup} />
+        <Route path="/login" render={() => (
+          // TODO: Add User Token and isAuthorised to localStorage once user has been authorised
+          isUserLoggedIn() ? <Redirect to="/messages" /> : <Login/>
+        )} />
+        <Route path="/forgot-password" component={ForgotPassword}/>
+        <Route path="/reset-password" component={ResetPassword}/>
+        <Route path="/messages" render={() => (
+          // TODO: Replace <NotFound/> placeholder
+          isUserLoggedIn() ? <Messages/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
+        )}/>
+        <Route path="/unassigned-requests" render={() => (
+          // TODO: Replace <NotFound/> placeholder
+          isUserLoggedIn() ? <UnassignedMessages/> : <Redirect to={{ pathname: '/login', state: '/unassigned-requests' }}/>
+        )}/>
+        <Route path="/ask-for-help" component={AskForHelp} />
+        <Route path="/ask-a-question" component={AskAQuestion} />
+        <Route path="/query-submitted" component={querySubmitted} />
+        <Route path="/our-mentors" component={Mentors}/>
+        <Route path="/resources" component={Resources}/>
+        <Route path="/contact" component={Contact}/>
+        <Route path="*" component={NotFound}/>
+      </Switch>
     )
     
     return (
       <div className='App'>
-      <Layout>
-        {routes}
-      </Layout>
+        <Layout>
+          {routes}
+        </Layout>
       </div>
     );
   }

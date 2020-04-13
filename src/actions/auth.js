@@ -1,4 +1,5 @@
-import { fetchData, postData, patchData } from './utils';
+import { fetchData, postData, patchData, success } from './utils';
+import history from '../helpers/history';
 
 const userFetchLogin = user => {
     const request = {};
@@ -6,9 +7,14 @@ const userFetchLogin = user => {
 
     return dispatch => {
         return fetchData('users/sign_in', request)
-            .then(reponse => {
+            .then(response => {
                 // TODO: replace with success action
                 mockResult(dispatch)
+
+                // if (addToLocal(response.payload)) {
+                //     history.push('/messages');
+                //     dispatch(login(response));
+                // }
             })
             .catch(error => {
                 // TODO: replace with failure action
@@ -59,6 +65,7 @@ const mockResult = (dispatch) => {
     }
     
     if (addToLocal(response.payload)) {
+        history.push('/messages');
         dispatch(login(response));
     }
 }
@@ -93,24 +100,9 @@ const resetUserPassword = user => {
     }
 }
 
-
-const sendQuery = data => {
-    const request = {};
-    request.data = data;
-
-    return postData('create_parent_and_task', request)
-        .then(response => {
-            console.log('success')
-        })
-        .catch(error => {
-            console.log('log in error')
-        })
-}
-
 export {
     userFetchLogin,
     forgotPasswordRequest,
     resetUserPassword,
     userRemoveLogin,
-    sendQuery
 }

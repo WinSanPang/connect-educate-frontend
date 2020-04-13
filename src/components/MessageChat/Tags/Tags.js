@@ -7,9 +7,9 @@ class Tags extends Component {
 
     renderTags() {
         // const { tags } = this.props;
-        const tags = ['Language', 'Test'];
-        const elements = Object.entries( tags ).map( item =>  {
-            return <Label size={'large'}>item</Label>
+        const tags = ['Language', 'Subject'];
+        const elements = Object.entries( tags ).map( ([id, item]) =>  {
+            return <Label key={id} size={'large'}>{item}</Label>
         });
 
         return elements;

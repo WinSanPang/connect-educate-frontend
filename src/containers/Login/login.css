@@ -12,14 +12,19 @@
     width: 100%;
 }
 
-.login {
-    padding: 24px;
+.login__container {
+    padding: 0 24px;
     margin: 0 auto;
     max-width: 900px;
+    width: 100%;
+}
+
+.login__container .form.error {
+    background-color: unset !important;
 }
 
 @media only screen and (min-width: 768px) {
-    .login {
-        padding: 64px;
+    .login__container {
+        padding: 0 64px;
     }
 }

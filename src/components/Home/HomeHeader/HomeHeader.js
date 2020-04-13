@@ -26,8 +26,8 @@ export class HomeHeader extends Component {
             With schools closed, being in charge of your child’s education can feel overwhelming! Through Connected Learning we invite parents and carers to ask any questions that might help you support your child’s learning and wellbeing during this time. 
           </p>
           <p>
-            Volunteer mentors include teachers, wellbeing and tech experts and other parents! Importantly we also offer support in different languages. 
-            Parents who don’t have access to the internet can text in support requests - see our contact page <a href='/contact'>here</a> for details.
+            Volunteer mentors include teachers, wellbeing and tech experts and other parents! Importantly we also offer support in different languages 
+{/*             Parents who don’t have access to the internet can text in support requests */} - see our contact page <a href='/contact'>here</a> for details.
           </p>
         <Button 
           content='Ask for Help'
