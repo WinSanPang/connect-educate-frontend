@@ -1,4 +1,5 @@
 import React from 'react';
+import history from 'helpers/history';
 
 import Aux from '../../hoc/Aux';
 import NavigationMenu from '../Navigation/NavigationMenu/NavigationMenu';
@@ -7,7 +8,7 @@ import Footer from '../Navigation/NavigationMenu/Footer/Footer';
 import './layout.css';
 
 const layout = ( props ) => {
-  const className =  window.location.pathname.replace('/', '');
+  const className =  history.location.pathname.replace('/', '');
   const hideFooter = className === 'messages';
   
   return (
