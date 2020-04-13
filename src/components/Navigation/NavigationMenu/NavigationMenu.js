@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { isUserLoggedIn } from 'helpers';
 import { connect } from 'react-redux';
 import { userRemoveLogin } from 'actions';
-import { Menu, Image } from 'semantic-ui-react';
+import { Menu, Image, Label } from 'semantic-ui-react';
 
 import './NavigationMenu.css';
 
@@ -29,7 +29,10 @@ class NavigationMenu extends Component {
               active={activeItem === 'login'}
               onClick={this.handleItemClick}
               href='/messages'
-            ></Menu.Item> );
+            >
+              Requests
+              <Label color='red'>3</Label>
+            </Menu.Item> );
 
     return (
       <div className='NavigationMenu'>
