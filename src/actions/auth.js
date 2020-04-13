@@ -93,24 +93,9 @@ const resetUserPassword = user => {
     }
 }
 
-
-const sendQuery = data => {
-    const request = {};
-    request.data = data;
-
-    return postData('create_parent_and_task', request)
-        .then(response => {
-            console.log('success')
-        })
-        .catch(error => {
-            console.log('log in error')
-        })
-}
-
 export {
     userFetchLogin,
     forgotPasswordRequest,
     resetUserPassword,
     userRemoveLogin,
-    sendQuery
 }
