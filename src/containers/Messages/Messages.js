@@ -14,13 +14,8 @@ import UnassignedMessages from 'containers/UnassignedMessages';
 
 class Messages extends Component {
     state = {
-        showUnassignedMessages: false,
-        showMessages: true
+        showUnassignedMessages: false
     }
-
-    /* showMyMessagesHandler = () => {
-        this.setState({showUnassignedMessages: false});
-    } */
 
     unassignedMessagesClickedHandler = () => {
         this.setState((prevState) => {
@@ -45,7 +40,7 @@ class Messages extends Component {
         }
 
         const current = selectedMessage || messages[0];
-
+        
         let page = (
             <Aux>
             <Button 
