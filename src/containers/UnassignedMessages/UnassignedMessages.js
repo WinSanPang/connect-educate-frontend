@@ -146,7 +146,7 @@ class UnassignedMessages extends Component {
                     >My Messages</Button>
                     <Container fluid className='UnassignedMessages'>
                         <Grid.Column className='UnassignedMessages__Grid'>
-                        <Header.Content className='UnassignedMessages_Header'>Unassigned Messages</Header.Content>
+                        <Header.Content className='UnassignedMessages_Header'>Unassigned Requests</Header.Content>
                         <Container
                             style={{marginBottom: '2%'}}>
                                 <Header>

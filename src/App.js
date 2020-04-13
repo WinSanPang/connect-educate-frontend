@@ -44,9 +44,9 @@ class App extends Component {
           // TODO: Replace <NotFound/> placeholder
           isUserLoggedIn() ? <Messages/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
         )}/>
-        <Route path="/unassigned-messages" render={() => (
+        <Route path="/unassigned-requests" render={() => (
           // TODO: Replace <NotFound/> placeholder
-          isUserLoggedIn() ? <UnassignedMessages/> : <Redirect to={{ pathname: '/login', state: '/unassigned-messages' }}/>
+          isUserLoggedIn() ? <UnassignedMessages/> : <Redirect to={{ pathname: '/login', state: '/unassigned-requests' }}/>
         )}/>
         <Route path="/ask-for-help" component={AskForHelp} />
         <Route path="/ask-a-question" component={AskAQuestion} />

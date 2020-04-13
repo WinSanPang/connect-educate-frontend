@@ -42,7 +42,7 @@ class Messages extends Component {
         let page = (
             <Aux>
             <Button 
-                href='/unassigned-messages'
+                href='/unassigned-requests'
                 >Unassigned Requests</Button>
                 <Grid
                     celled
