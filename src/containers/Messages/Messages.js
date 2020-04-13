@@ -18,9 +18,7 @@ class Messages extends Component {
     }
 
     unassignedMessagesClickedHandler = () => {
-        this.setState((prevState) => {
-            return { showUnassignedMessages: !prevState.showUnassignedMessages };
-        } );
+        this.setState((prevState) => ({showUnassignedMessages: !prevState.showUnassignedMessages}));
     }
 
     componentDidMount() {
@@ -44,8 +42,8 @@ class Messages extends Component {
         let page = (
             <Aux>
             <Button 
-                    onClick={this.unassignedMessagesClickedHandler}
-                    >Unassigned Messages</Button>
+                onClick={this.unassignedMessagesClickedHandler}
+                >Unassigned Messages</Button>
                 <Grid
                     celled
                     columns={12}>
@@ -63,12 +61,12 @@ class Messages extends Component {
                 </Grid>
                 </Aux>
         )
-
+    
         if (this.state.showUnassignedMessages) {
             page = (
                 <UnassignedMessages/>
             )
-        }
+        } else 
 
         return (
             <div className="messages__container">
