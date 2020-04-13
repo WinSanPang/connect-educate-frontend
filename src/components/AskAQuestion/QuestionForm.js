@@ -4,6 +4,8 @@ import { Segment, Message } from "semantic-ui-react";
 import "./QuestionForm.css";
 import { validateEmail, validatePassword } from "./Validation";
 
+import { sendQuery } from "../../actions/auth"
+
 function QuestionForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -57,6 +59,29 @@ function QuestionForm() {
   const errorMessage = message => {
     return <div class="error">{message}</div>;
   };
+
+  const formatData = () => {
+    return(
+      {
+        "parent": {
+          "email": email,
+          "first_name" : name,
+          "password" : password,
+          "preferred_language": language,
+          "english_proficiency": englishProficiency,
+        },
+        "task": {
+          "content": query,
+          "skill": subject,
+          "childs_age": childsAge
+        }
+      }
+    )
+  }
+
+  const handleSubmit= () => {
+    sendQuery(formatData)
+  }
 
   return (
     <>
@@ -117,7 +142,7 @@ function QuestionForm() {
                 onChange={e => setQuery(e.target.value)}
               ></textarea>
             </div>
-            <button class="ui button" type="submit">
+            <button class="ui button" type="submit" onClick={() => handleSubmit()}>
               Submit
             </button>
           </form>

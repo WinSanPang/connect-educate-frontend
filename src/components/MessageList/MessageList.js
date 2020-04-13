@@ -2,21 +2,30 @@ import React, { Component } from 'react';
 import { Card, Feed } from 'semantic-ui-react';
 
 import MessageListItem from 'components/MessageListItem';
-
+import './message-list.css';
 
 class MessageList extends Component {
     renderMessageListItems() {
-        const { messages } = this.props;
-        const elements = Object.entries( messages ).map( item =>  <MessageListItem key={item.id}/> );
+        const { messages, selectedId } = this.props;
+        const elements = messages
+                            .map( item =>  {
+                                const active = selectedId === item.id;
+    
+                                return (
+                                    <MessageListItem
+                                        key={item.id} 
+                                        feedItem={item} 
+                                        active={active}
+                                    /> 
+                                );
+                            });
 
         return elements;
     }
-
+    
     render() {
-        
-
         return (
-            <Card fluid>
+            <Card className='message-list' fluid>
                 <Card.Content>
                     <Card.Header>Chats</Card.Header>
                 </Card.Content>

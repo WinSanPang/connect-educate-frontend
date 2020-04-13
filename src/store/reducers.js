@@ -5,7 +5,10 @@ export default ( state, action ) => {
 
     switch ( action.type ) {
         case 'FETCH_MESSAGES':
-            newState.messages = action.payload;
+            newState.messages = action.payload.messages;
+            break;        
+        case 'UPDATE_SELECTED_MESSAGE':
+            newState.selectedMessage = action.payload.id;
             break;
         case 'LOGIN_SUCCESS': 
             newState.user = action.payload.user;

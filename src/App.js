@@ -22,6 +22,8 @@ import Mentors from './containers/Mentors';
 import Resources from './containers/Resources/Resources';
 import Contact from './containers/Contact/Contact';
 import Messages from 'containers/Messages';
+import UnassignedMessages from './containers/UnassignedMessages';
+import querySubmitted from './containers/QuerySubmitted'
 
 
 class App extends Component {
@@ -41,8 +43,13 @@ class App extends Component {
         // TODO: Replace <NotFound/> placeholder
         isUserLoggedIn() ? <Messages/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
       )}/>
+      <Route path="/unassigned-messages" render={() => (
+        // TODO: Replace <NotFound/> placeholder
+        isUserLoggedIn() ? <UnassignedMessages/> : <Redirect to={{ pathname: '/login', state: '/unassigned-messages' }}/>
+      )}/>
       <Route path="/ask-for-help" component={AskForHelp} />
       <Route path="/ask-a-question" component={AskAQuestion} />
+      <Route path="/query-submitted" component={querySubmitted} />
       <Route path="/our-mentors" component={Mentors}/>
       <Route path="/resources" component={Resources}/>
       <Route path="/contact" component={Contact}/>

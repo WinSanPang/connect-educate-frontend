@@ -1,0 +1,31 @@
+.UnassignedMessages {
+    align-items: center;
+}
+
+.UnassignedMessages__Grid {
+    text-align: center;
+}
+
+.UnassignedMessages_Header {
+    font-size: 50px;
+    margin: 2% 0;
+}
+
+.UnassignedMessages__CardGroup {
+    margin-left: 5%  !important;
+}
+
+.messages__container {
+    padding: 0 24px;
+    height: 80vh;
+}
+
+.messages__container .grid {
+    height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .messages__container {
+        padding: 0 64px;
+    }
+}
