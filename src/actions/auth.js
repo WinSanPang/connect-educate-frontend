@@ -1,4 +1,4 @@
-import { fetchData, postData, patchData } from './utils';
+import { fetchData, postData, patchData, success } from './utils';
 import history from '../helpers/history';
 
 const userFetchLogin = user => {
@@ -7,9 +7,14 @@ const userFetchLogin = user => {
 
     return dispatch => {
         return fetchData('users/sign_in', request)
-            .then(reponse => {
+            .then(response => {
                 // TODO: replace with success action
                 mockResult(dispatch)
+
+                // if (addToLocal(response.payload)) {
+                //     history.push('/messages');
+                //     dispatch(login(response));
+                // }
             })
             .catch(error => {
                 // TODO: replace with failure action

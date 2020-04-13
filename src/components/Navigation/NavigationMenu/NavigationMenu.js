@@ -31,7 +31,7 @@ class NavigationMenu extends Component {
               href='/messages'
             >
               Requests
-               <Label color='red'>3</Label>
+              <Label color='red'>3</Label>
             </Menu.Item> );
 
     return (
