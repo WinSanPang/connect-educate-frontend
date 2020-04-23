@@ -4,7 +4,7 @@ import { Header, Image, Button, Container, Grid, Segment, Dropdown } from 'seman
 import Aux from '../../../hoc/Aux';
 import Mentor1 from '../../../assets/mentor1.png';
 
-const skills = [
+/* const skills = [
   { key: 'art', text: 'Art', value: 'art' },
   { key: 'maths', text: 'Maths', value: 'maths' },
   { key: 'music', text: 'Music', value: 'music' },
@@ -20,7 +20,7 @@ const languages = [
   { key: 'polish', text: 'Polskie', value: 'polish' },
   { key: 'punjabi', text: 'ਪੰਜਾਬੀ', value: 'punjabi' },
   { key: 'urdu', text: 'اردو', value: 'urdu' },
-]
+] */
 
 export class MentorsList extends Component {
   state = {}
@@ -38,7 +38,7 @@ export class MentorsList extends Component {
           style={{fontSize:'50px', marginBottom: '3%'}}>
             Our Mentors
         </Header>
-        <Container
+        {/* <Container
           style={{marginBottom: '2%'}}>
             <Header>
               Filter by:
@@ -56,7 +56,7 @@ export class MentorsList extends Component {
               selection 
               options={languages} 
               />
-        </Container>
+        </Container> */}
         <Container>
           <Grid columns={2}>
             <Grid.Column>

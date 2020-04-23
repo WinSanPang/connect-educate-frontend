@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Header, Grid, Icon } from 'semantic-ui-react';
 
+import './HomeHowItWorks.scss';
+
 const HomeHowItWorks = () => (
   <Container textAlign='center'>
     <Header 
@@ -14,7 +16,7 @@ const HomeHowItWorks = () => (
     <Grid columns={3}>
       <Grid.Row>
         <Grid.Column>
-          <Header as='h2' icon>
+          <Header as='h2' icon className="Home__Orange">
             <Icon 
               name='address card'
               size='massive'/>
@@ -36,7 +38,7 @@ const HomeHowItWorks = () => (
           </Header>
         </Grid.Column>
         <Grid.Column>
-          <Header as='h2' icon>
+          <Header as='h2' icon className="Home__Teal">
             <Icon 
               name='comments'
               size='massive'/>

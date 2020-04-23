@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Image, Button } from 'semantic-ui-react';
 
+import './HomeHeader.scss';
 import HeaderImage from 'assets/header.png';
+import Aux from '../../../hoc/Aux';
 
 export class HomeHeader extends Component {
   state = {}
@@ -12,8 +14,8 @@ export class HomeHeader extends Component {
     const { activeItem } = this.state
 
     return (
-        <Container
-          textAlign='center'
+      <Aux>
+        <Container textAlign='center'
           >
           <Image 
             src={HeaderImage}
@@ -29,31 +31,26 @@ export class HomeHeader extends Component {
             Volunteer mentors include teachers, wellbeing and tech experts and other parents! Importantly we also offer support in different languages 
 {/*             Parents who don’t have access to the internet can text in support requests */} - see our contact page <a href='/contact'>here</a> for details.
           </p>
-        <Button 
+        </Container>
+        <Container textAlign='center' className="HomeHeader">
+          <Button.Content 
           content='Ask for Help'
           href='/ask-for-help'
           size='huge'
-          style={{
-            marginRight: '10%',
-            marginTop: '2%',
-            fontSize: '50px'
-            }}
-            active={activeItem === 'ask-for-help'}
-            onClick={this.handleItemClick}
+          className="Home__AskForHelpButton"
+          active={activeItem === 'ask-for-help'}
+          onClick={this.handleItemClick}
           />
-        <Button 
+        <Button.Content 
           content='Offer Help'
           size='huge'
           href='/volunteer-with-us'
-          style={{
-            marginLeft: '10%',
-            marginTop: '2%',
-            fontSize: '50px'
-            }}
+          className="Home__OfferHelpButton"
           active={activeItem === 'offer-help'}
           onClick={this.handleItemClick}
           />
         </Container>
+      </Aux>
     );
   }
 }

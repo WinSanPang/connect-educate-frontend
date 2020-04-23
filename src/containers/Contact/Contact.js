@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Header, Icon } from 'semantic-ui-react';
 
-import './Contact.css';
+import './Contact.scss';
 
 const Contact = () => {
     return (
@@ -11,6 +11,7 @@ const Contact = () => {
             <Icon 
               name='mail outline'
               size='massive'
+              className="Contact__TealIcon"
               />
               Contact Us
               </Header.Content>

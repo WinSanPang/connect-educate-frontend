@@ -51,7 +51,7 @@ const HomeResources = () => (
           </Header>
         </Grid.Column>
         <Grid.Column>
-          <Header as='h2' icon>
+          <Header as='h2' icon className="Home__Teal">
             <Icon 
               name='computer'
               size='massive'

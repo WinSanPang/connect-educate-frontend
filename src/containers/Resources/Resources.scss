@@ -1,0 +1,22 @@
+@import '../../scss/colours.scss';
+
+.Resources {
+  background-image: url('../../assets/colour-lessons-2.png');
+  background-size: cover;
+  min-height: 600px;
+  margin-bottom: 5%;
+}
+
+.Resources__Icon {
+  padding: 10% !important;
+}
+
+.Resources__TealIcon {
+  color: $primary;
+  padding: 10% !important;
+}
+
+.Resources__OrangeIcon {
+  color: $secondary;
+  padding: 10% !important;
+}

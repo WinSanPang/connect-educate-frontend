@@ -1,11 +1,10 @@
 import React from 'react';
 import { Container, Header, Grid, Icon, Image, GridColumn } from 'semantic-ui-react';
 
-import './Resources.css';
+import './Resources.scss';
 import Aux from '../../hoc/Aux';
 import JigsawTwo from '../../assets/jigsaw-2-small.png';
 import Flower from '../../assets/flower-small.png';
-import ColourLessons from '../../assets/colour-lessons-2.png';
 
 const Resources = () => (
   <Aux>
@@ -61,7 +60,7 @@ const Resources = () => (
               <Icon 
                 name='microphone'
                 size='massive'
-                style={{padding:'10%'}}/>
+                className="Resources__TealIcon"/>
               Phonics
               <Header.Subheader style={{marginTop: '5%'}}>
                 Want to practice phonics with your child? Click <a href='https://www.youtube.com/watch?v=lFyDwUKSw7Y&list=PLDe74j1F52zSCiOMSn3zQDSzgu9TrbQ1c/' target='_blank'>here</a> for some daily lessons. 
@@ -75,7 +74,7 @@ const Resources = () => (
               <Icon 
                 name='bicycle'
                 size='massive'
-                style={{padding:'10%'}}/>
+                className="Resources__OrangeIcon"/>
                   PE
               <Header.Subheader style={{marginTop: '5%'}}>
               Burn some calories with your little one with <a href='https://www.thebodycoach.com/blog/pe-with-joe-1254.html/' target="_blank">Joe Wick's PE sessons</a> or try this calming <a href='https://www.youtube.com/watch?v=4ZpkRAcgws4/' target="_blank">15 minute yoga workout</a> for kids.
@@ -87,7 +86,8 @@ const Resources = () => (
               <Icon 
                 name='book'
                 size='massive'
-                style={{padding:'10%'}}/>
+                className="Resources__Icon"
+                />
                   Story Time
               <Header.Subheader style={{marginTop: '5%'}}>
                 Listen to children’s stories in your own language for free <a href='https://stories.audible.com/discovery' target="_blank">here</a> or visit <a href='https://www.thisisbooklove.com/' target="_blank">this bookshop</a> to order a range of multicultural stories.
@@ -99,7 +99,7 @@ const Resources = () => (
               <Icon 
                 name='computer'
                 size='massive'
-                style={{padding:'10%'}}
+                className="Resources__TealIcon"
                 />
                   Trouble with Tech?
               <Header.Subheader style={{marginTop: '5%'}}>
@@ -114,7 +114,7 @@ const Resources = () => (
               <Icon 
                 name='heartbeat'
                 size='massive'
-                style={{padding:'10%'}}
+                className="Resources__Icon"
                 />
                   Wellbeing
               <Header.Subheader style={{marginTop: '5%'}}>

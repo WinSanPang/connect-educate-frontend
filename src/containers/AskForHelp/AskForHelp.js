@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Button, Container } from 'semantic-ui-react';
 
+import './AskForHelp.scss';
 import Aux from '../../hoc/Aux';
 import AskForHelpHowItWorks from '../../components/AskForHelp/AskForHelpHowItWorks/AskForHelpHowItWorks';
 import AskForHelpMentorsList from '../../components/AskForHelp/AskForHelpMentorsList/AskForHelpMentorsList';
@@ -22,17 +23,14 @@ export class AskForHelp extends Component {
             Get the help you need
         </Header>
         <AskForHelpHowItWorks/>
-        <Container textAlign='center'>
-          <Button 
+        <Container textAlign='center' className="AskForHelp">
+          <Button.Content 
             content='Request Help'
             size='huge'
             href='/ask-a-question'
-            style={{
-              margin: '5%',
-              fontSize: '40px',
-              }}
-              active={activeItem === 'request-help'}
-              onClick={this.handleItemClick}
+            className="AskForHelp__Button"
+            active={activeItem === 'request-help'}
+            onClick={this.handleItemClick}
             />
         </Container>
         <AskForHelpMentorsList/>
