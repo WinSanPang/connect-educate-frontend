@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Image, Button, Container, Grid, Segment, Dropdown } from 'semantic-ui-react';
 
+import './AskForHelpMentorsList.scss';
 import Aux from '../../../hoc/Aux';
 import Mentor1 from '../../../assets/mentor1.png';
 
@@ -32,12 +33,10 @@ export class MentorsList extends Component {
 
     return (
       <Aux>
-        <Header 
-          as='h1'
-          textAlign='center'
-          style={{fontSize:'50px', marginBottom: '3%'}}>
+        <Header.Content
+          className="AskForHelpMentors__Header">
             Our Mentors
-        </Header>
+        </Header.Content>
         {/* <Container
           style={{marginBottom: '2%'}}>
             <Header>

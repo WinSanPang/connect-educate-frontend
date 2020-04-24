@@ -15,7 +15,7 @@ export class HomeHeader extends Component {
 
     return (
       <Aux>
-        <Container textAlign='center'
+        <Container textAlign='center' className="Home__Paragraph"
           >
           <Image 
             src={HeaderImage}

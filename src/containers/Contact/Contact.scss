@@ -1,4 +1,5 @@
 @import '../../scss/colours.scss';
+@import '../../scss/fonts.scss';
 
 .Contact {
   text-align: center;
@@ -6,12 +7,12 @@
 }
 
 .Contact__Header {
-  font-size: 50px;
+  font: $heading;
   color: $secondary;
 }
 
-.Contact__Subheader {
-  font-size: 20px;
+.Contact__Paragraph {
+  font-size: $paragraph;
   margin-top: 2%;
   margin-bottom: 10%;
 }

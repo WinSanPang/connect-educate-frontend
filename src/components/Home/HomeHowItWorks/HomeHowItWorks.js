@@ -5,14 +5,9 @@ import './HomeHowItWorks.scss';
 
 const HomeHowItWorks = () => (
   <Container textAlign='center'>
-    <Header 
-      as='h1'
-      style={{
-        margin: '5%',
-        fontSize: '50px'
-        }}>
+    <Header.Content className="Home__Subheading">
         How it Works
-    </Header>
+    </Header.Content>
     <Grid columns={3}>
       <Grid.Row>
         <Grid.Column>

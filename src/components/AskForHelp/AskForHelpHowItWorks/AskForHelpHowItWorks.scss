@@ -1,4 +1,10 @@
 @import '../../../scss/colours.scss';
+@import '../../../scss/fonts.scss';
+
+.AskForHelp__Header {
+  margin: 5%;
+  font: $subheading;
+}
 
 .AskForHelp__Teal {
   color: $primary !important;
@@ -6,4 +12,8 @@
 
 .AskForHelp__Orange {
   color: $secondary !important;
+}
+
+.AskForHelp__Black {
+  color: black;
 }

@@ -1,21 +1,19 @@
 import React from 'react';
 import { Container, Header, Grid, Icon, Image } from 'semantic-ui-react';
 
+import './HomeResources.scss';
 import JigsawTwo from '../../../assets/jigsaw-2-small.png';
 import Flower from '../../../assets/flower-small.png';
 
 const HomeResources = () => (
   <Container textAlign='center'>
-    <Header 
-      as='h1'
-      style={{
-        margin: '5%',
-        fontSize: '50px'
-        }}>
-        Popular Resources
-        <Header.Subheader>
-          We know it can be hard to know what activities or learning materials to use with your child, so we've listed a few to help get you started. See our Resources page <a href='/resources'>here</a> for the full list! 
-        </Header.Subheader>
+    <Header.Content className="HomeResources__Subheading">
+      Popular Resources
+    </Header.Content>
+    <Header as='h2'>
+      <Header.Subheader>
+        We know it can be hard to know what activities or learning materials to use with your child, so we've listed a few to help get you started. See our Resources page <a href='/resources'>here</a> for the full list! 
+      </Header.Subheader>
     </Header>
     <Grid columns={3}>
       <Grid.Row>

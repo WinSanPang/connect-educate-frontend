@@ -5,18 +5,14 @@ import './AskForHelpHowItWorks.scss';
 
 const AskForHelpHowItWorks = () => (
   <Container textAlign='center'>
-    <Header 
-      as='h1'
-      style={{
-        margin: '5%',
-        fontSize: '50px'
-        }}>
+    <Header.Content
+      className="AskForHelp__Header">
         How it Works
-    </Header>
+    </Header.Content>
     <Grid columns={3}>
       <Grid.Row>
         <Grid.Column>
-          <Header as='h2' icon>
+          <Header as='h2' icon className="AskForHelp__Teal">
             <Icon 
               name='address card'
               size='massive'
@@ -28,10 +24,11 @@ const AskForHelpHowItWorks = () => (
           </Header>
         </Grid.Column>
         <Grid.Column>
-          <Header as='h2' icon>
+          <Header as='h2' icon className="AskForHelp__Teal">
             <Icon
             name='envelope'
-            size='massive'/>
+            size='massive'
+            className="AskForHelp__Black"/>
               Send a Help Request
             <Header.Subheader style={{marginTop: '5%'}}>
             Send us a message about what you would like help with. This can be in English or in any other language that you can see listed on the language options.
@@ -39,7 +36,7 @@ const AskForHelpHowItWorks = () => (
           </Header>
         </Grid.Column>
         <Grid.Column>
-          <Header as='h2' icon>
+          <Header as='h2' icon className="AskForHelp__Teal">
             <Icon 
               name='comments'
               size='massive'

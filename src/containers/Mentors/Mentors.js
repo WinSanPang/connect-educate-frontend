@@ -11,11 +11,12 @@ export class Mentors extends Component {
       <Aux>
         <Header 
           as='h1'
-          textAlign='center'
-          style={{fontSize:'50px'}}>
+          textAlign='center'>
             Mentors
         </Header>
       </Aux>
     );
   }
 }
+
+//Not currently used

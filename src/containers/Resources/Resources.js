@@ -9,16 +9,13 @@ import Flower from '../../assets/flower-small.png';
 const Resources = () => (
   <Aux>
     <Container textAlign='center'>
-    <Header 
-        as='h1'
-        style={{
-          fontSize: '50px'
-          }}>
+    <Header.Content className="Resources__Header">
           Popular Resources
-          <Header.Subheader>
-            We know it can be hard to know what activities or learning materials to use with your child, so here's a list to get you inspired
-          </Header.Subheader>
-      </Header>
+          
+      </Header.Content>
+      <p className="Resources__Paragraph">
+          We know it can be hard to know what activities or learning materials to use with your child, so here's a list to get you inspired:
+      </p>
       <Container className='Resources'>
       </Container>
       <Container>
