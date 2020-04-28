@@ -14,4 +14,4 @@ const QuerySubmitted = () => {
     )
 }
 
-export default QuerySubmitted
+export default QuerySubmitted;

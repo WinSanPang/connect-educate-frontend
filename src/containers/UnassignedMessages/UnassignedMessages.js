@@ -5,12 +5,10 @@ import { connect } from 'react-redux';
 import { isUserLoggedIn } from 'helpers';
 import { Header, Container, Card, Grid, Button, Dropdown } from 'semantic-ui-react';
 
-import './UnassignedMessages.css';
+import './UnassignedMessages.scss';
 import Aux from 'hoc/Aux';
 import UnassignedMessageList from 'components/UnassignedMessages/UnassignedMessageList';
 import Messages from 'containers/Messages';
-
-import './UnassignedMessages.css';
 
 const skills = [
     { key: 'art', text: 'Art', value: 'art' },

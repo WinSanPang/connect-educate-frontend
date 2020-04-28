@@ -5,6 +5,7 @@ import './Resources.scss';
 import Aux from '../../hoc/Aux';
 import JigsawTwo from '../../assets/jigsaw-2-small.png';
 import Flower from '../../assets/flower-small.png';
+import Books from '../../assets/books-small.png';
 
 const Resources = () => (
   <Aux>
@@ -79,13 +80,14 @@ const Resources = () => (
             </Header>
           </Grid.Column>
           <Grid.Column>
+          <Image 
+              src={Books}
+              style={{
+                textAlign: 'center',
+                display: 'inline'}}
+              />
             <Header as='h2' icon>
-              <Icon 
-                name='book'
-                size='massive'
-                className="Resources__Icon"
-                />
-                  Story Time
+              Story Time
               <Header.Subheader style={{marginTop: '5%'}}>
                 Listen to children’s stories in your own language for free <a href='https://stories.audible.com/discovery' target="_blank">here</a> or visit <a href='https://www.thisisbooklove.com/' target="_blank">this bookshop</a> to order a range of multicultural stories.
               </Header.Subheader>

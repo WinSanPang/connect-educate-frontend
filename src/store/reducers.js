@@ -26,7 +26,7 @@ export default ( state, action ) => {
             newState.resetPasswordError = action.error;
             break;
         case 'PARENT_REQUEST_SENT':
-            newState.parentRequest = action.payload;
+            newState.parentRequestSent = action.payload;
             break;
         case 'PARENT_REQUEST_FAIL':
             newState.parentRequestError = action.error;

@@ -1,3 +1,5 @@
+@import '../../scss/fonts.scss';
+
 .UnassignedMessages {
     align-items: center;
 }
@@ -7,7 +9,7 @@
 }
 
 .UnassignedMessages_Header {
-    font-size: 50px;
+    font: $heading;
     margin: 2% 0;
 }
 
