@@ -9,7 +9,7 @@ import { validateEmail, validatePassword } from "./Validation";
 import { sendQuery } from "../../actions/askAQuestion";
 import QuerySubmitted from "../../containers/QuerySubmitted";
 
-function QuestionForm({parentRequestError, sendQueryData}) {
+function QuestionForm({parentRequestSent, parentRequestError, sendQueryData}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +19,6 @@ function QuestionForm({parentRequestError, sendQueryData}) {
   const [subject, setSubject] = useState("");
   const [queryLanguage, setQueryLanguage] = useState("English");
   const [query, setQuery] = useState("");
-  const [parentRequestSent, setParentRequestSent] = useState(false);
 
   const textInput = (
     labelText,
@@ -155,7 +154,7 @@ function QuestionForm({parentRequestError, sendQueryData}) {
         </Segment>
       </div>
   )
-  
+
   let requestErrorMessage = null;
   
   if (parentRequestError) {
