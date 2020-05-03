@@ -31,6 +31,12 @@ export default ( state, action ) => {
         case 'PARENT_REQUEST_FAIL':
             newState.parentRequestError = action.error;
             break;
+        case 'CLAIM_TASK_SUCCESS':
+            newState.claimTaskSuccess = action.payload;
+        case 'CLAIM_TASK_FAIL':
+            newState.claimTaskFail = action.error;
+        case 'FETCH_UNASSIGNED_REQUESTS':
+            newState.unassignedRequests = action.payload;
         default:
             break;
     }

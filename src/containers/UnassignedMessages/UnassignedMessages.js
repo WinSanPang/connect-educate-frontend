@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Header, Container, Card, Grid, Button, Dropdown } from 'semantic-ui-react';
 
 import { isUserLoggedIn } from 'helpers';
-import { Header, Container, Card, Grid, Button, Dropdown } from 'semantic-ui-react';
+import { fetchUnassignedRequests } from 'actions';
 
 import './UnassignedMessages.scss';
 import Aux from 'hoc/Aux';
@@ -32,11 +33,7 @@ class UnassignedMessages extends Component {
     state = {
         showUnassignedMessages: true,
     }
-
-    /* showMyMessagesHandler = () => {
-        this.setState({showUnassignedMessages: false});
-    } */
-
+    
     myMessagesClickedHandler = (event) => {
         this.props.history.push('/messages');
         event.preventDefault();
@@ -46,7 +43,10 @@ class UnassignedMessages extends Component {
         if(!isUserLoggedIn()) {
             return( <Redirect to="/login"/> );
         }
-    }
+/* 
+        const { fetchUnassignedRequests } = this.props;
+        fetchUnassignedRequests();
+ */    }
 
     render() {
         const unassignedMessages = [
@@ -166,13 +166,18 @@ class UnassignedMessages extends Component {
                             </Container>
                         <Card.Group className='UnassignedMessages__CardGroup'>
                             <UnassignedMessageList 
-                                unassignedMessages={unassignedMessages}/>
+                                unassignedMessages={unassignedMessages}
+                                requestId="Sarah"
+                                />
                         </Card.Group>
                         </Grid.Column>
                     </Container>
                     </Aux>
             
         )
+        /* 
+        console.log('cheeses?', this.props.unassignedMessagess);
+        console.log('cheeses??', this.props.fetchUnassignedRequests); */
 
         if (!this.state.showUnassignedMessages) {
             page = (
@@ -188,5 +193,15 @@ class UnassignedMessages extends Component {
         )
     }
 }
+/* 
+const mapStateToProps = (state) => ({
+    unassignedMessagess: state.unassignedRequests
+});
+
+const mapDispatchToProps = ( dispatch ) => ({
+	fetchUnassignedRequests: () => {
+		dispatch(fetchUnassignedRequests());
+	},
+}); */
 
 export default withRouter(UnassignedMessages);

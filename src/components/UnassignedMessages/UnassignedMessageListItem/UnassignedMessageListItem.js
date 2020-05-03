@@ -4,8 +4,12 @@ import moment from 'moment';
 import { Card, Button } from 'semantic-ui-react';
 import './UnassignedMessageListItem.css';
 
-class UnassignedMessageListItem extends Component {
-    render() {
+const UnassignedMessageListItem = (props) => {
+
+/*     respondHandler = () => {
+
+    } */
+
         const feedDate = moment(Date.now());
 
         return (
@@ -21,11 +25,10 @@ class UnassignedMessageListItem extends Component {
                     <Card.Description>
                         I have a 5 year old daughter and I don't know how to help her with science homework because my English not very good. Can you help please?
                     </Card.Description>
-                    <Button className='UnassignedMessageListItem__Button' floated='right'>Respond</Button>
+                    <Button className='UnassignedMessageListItem__Button' floated='right' /* onClick={this.respondHandler} */>Respond</Button>
                 </Card.Content>
             </Card>
         )
     }
-}
 
 export default UnassignedMessageListItem;

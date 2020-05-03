@@ -64,7 +64,7 @@ function QuestionForm({parentRequestSent, parentRequestError, sendQueryData}) {
   };
 
   const formatData = () => {
-    return(
+    return (
       {
         "parent": {
           "email": email,
