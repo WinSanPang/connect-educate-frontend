@@ -31,13 +31,12 @@ class NavigationMenu extends Component {
               href='/messages'
             >
               Requests
-              <Label color='red'>3</Label>
+              {/* <Label color='red'>3</Label> */}
             </Menu.Item> );
 
     return (
       <div className='NavigationMenu'>
-        <Menu 
-          stackable 
+        <Menu  
           size='huge'
           borderless
           href='/'

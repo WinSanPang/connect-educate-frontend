@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from 'semantic-ui-react';
 
 import './Footer.scss';
-import Maslaha from '../../../../assets/maslaha.png';
+import Maslaha from '../../../assets/maslaha.png';
 
 const footer = (props) => {
     if (props.hideFooter) {
