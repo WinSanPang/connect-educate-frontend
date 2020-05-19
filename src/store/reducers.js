@@ -33,10 +33,13 @@ export default ( state, action ) => {
             break;
         case 'CLAIM_TASK_SUCCESS':
             newState.claimTaskSuccess = action.payload;
+            break;
         case 'CLAIM_TASK_FAIL':
             newState.claimTaskFail = action.error;
+            break;
         case 'FETCH_UNASSIGNED_REQUESTS':
             newState.unassignedRequests = action.payload;
+            break;
         default:
             break;
     }

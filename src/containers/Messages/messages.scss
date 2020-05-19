@@ -1,3 +1,6 @@
+@import '../../scss//colours.scss';
+@import '../../scss//fonts.scss';
+
 .messages__container {
     padding: 0 24px;
     height: 80vh;
@@ -6,6 +9,13 @@
 
 .messages__container .grid {
     height: 100%;
+}
+
+.messages__button {
+    color: $white !important;
+    background: $primary !important;
+    font-size: $button !important;
+    border-radius: 50px !important;
 }
 
 @media only screen and (min-width: 768px) {

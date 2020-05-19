@@ -3,6 +3,7 @@ import { Container, Header, Grid, Icon } from 'semantic-ui-react';
 
 import './AskForHelpHowItWorks.scss';
 
+const askForHelpHowItWorksStyling = {marginTop: '5%', color: 'black'}
 const AskForHelpHowItWorks = () => (
   <Container textAlign='center'>
     <Header.Content
@@ -18,7 +19,7 @@ const AskForHelpHowItWorks = () => (
               size='massive'
               className="AskForHelp__Orange"/>
                 Browse our Mentors
-            <Header.Subheader style={{marginTop: '5%'}}>
+            <Header.Subheader style={askForHelpHowItWorksStyling}>
               We have a range of volunteer mentors who we hope can help with with any request you have about supporting your child's learning - this includes teachers, other parents, tech experts and people who do communities and education work!
             </Header.Subheader>
           </Header>
@@ -28,9 +29,9 @@ const AskForHelpHowItWorks = () => (
             <Icon
             name='envelope'
             size='massive'
-            className="AskForHelp__Black"/>
+            className="AskForHelp__Orange"/>
               Send a Help Request
-            <Header.Subheader style={{marginTop: '5%'}}>
+            <Header.Subheader style={askForHelpHowItWorksStyling}>
             Send us a message about what you would like help with. This can be in English or in any other language that you can see listed on the language options.
             </Header.Subheader>
           </Header>
@@ -40,10 +41,10 @@ const AskForHelpHowItWorks = () => (
             <Icon 
               name='comments'
               size='massive'
-              className="AskForHelp__Teal"/>
+              className="AskForHelp__Orange"/>
                 Connected Learning
-            <Header.Subheader style={{marginTop: '5%'}}>
-            Our volunteer mentors can hopefully help with your request by sharing resources, advice and having a chat!
+            <Header.Subheader style={askForHelpHowItWorksStyling}>
+              Our volunteer mentors can hopefully help with your request by sharing resources, advice and having a chat!
             </Header.Subheader>
           </Header>
         </Grid.Column>

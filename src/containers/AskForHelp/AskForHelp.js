@@ -20,7 +20,9 @@ export class AskForHelp extends Component {
           as='h1'
           textAlign='center'
           style={{fontSize:'70px'}}>
+            <Header.Content className='AskForHelp__Teal'>
             Get the help you need
+            </Header.Content>
         </Header>
         <AskForHelpHowItWorks/>
         <Container textAlign='center' className="AskForHelp">

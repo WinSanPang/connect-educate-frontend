@@ -8,15 +8,19 @@
 
 .Contact__Header {
   font: $heading;
-  color: $secondary;
+  color: $primary;
 }
 
 .Contact__Paragraph {
   font-size: $paragraph;
   margin-top: 2%;
-  margin-bottom: 10%;
 }
 
-.Contact__TealIcon {
-  color: $primary
+.Contact__OrangeIcon {
+  color: $secondary
+}
+
+.Contact__ColourPencil {
+  margin: 2% 0;
+  padding: 0 15%;
 }

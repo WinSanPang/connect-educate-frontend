@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image } from 'semantic-ui-react';
 
-import './Footer.css';
-import RainbowPencils from '../../../../assets/rainbow-pencils-pastel.png';
+import './Footer.scss';
+import Maslaha from '../../../../assets/maslaha.png';
 
 const footer = (props) => {
     if (props.hideFooter) {
@@ -11,7 +11,8 @@ const footer = (props) => {
 
     return (
       <div className='Footer'>
-        <Image src={RainbowPencils}></Image>
+        <p className='Footer__Paragraph'>Connected Learning is created by...</p>
+        <Image src={Maslaha} floated='right' size='medium'/>
       </div>
     )
   };

@@ -1,6 +1,14 @@
 @import '../../../scss/fonts.scss';
+@import '../../../scss/colours.scss';
 
 .HomeResources__Subheading {
   font: $subheading;
   margin: 5%;
+  color: $primary;
+}
+
+.HomeResources__Paragraph {
+  font-size: $paragraph;
+  margin: 5%;
+  line-height: 1.4285em;
 }

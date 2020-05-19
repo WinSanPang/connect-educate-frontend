@@ -1,16 +1,18 @@
+@import '../../scss/colours.scss';
 @import '../../scss/fonts.scss';
 
 .UnassignedMessages {
-    align-items: center;
+    height: 100vh;
 }
 
-.UnassignedMessages__Grid {
+.UnassignedMessages__Container {
     text-align: center;
 }
 
 .UnassignedMessages_Header {
     font: $heading;
     margin: 2% 0;
+    color: $primary;
 }
 
 .UnassignedMessages__CardGroup {
@@ -19,4 +21,13 @@
 
 .UnassignedMessages__Button {
     margin-left: 5% !important;
+    background: $primary !important;
+    font-size: $button !important;
+    color: $white  !important;
+    border-radius: 50px !important;
 }
+
+.UnassignedMessages__Button:hover {
+    transition: all ease 0.5s;
+    color: $secondary !important;
+  }

@@ -8,7 +8,7 @@ import Aux from '../../../hoc/Aux';
 export class HomeHeader extends Component {
   state = {}
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
     const { activeItem } = this.state
@@ -37,7 +37,7 @@ export class HomeHeader extends Component {
           content='Ask for Help'
           href='/ask-for-help'
           size='huge'
-          className="Home__AskForHelpButton"
+          className="Home__Button"
           active={activeItem === 'ask-for-help'}
           onClick={this.handleItemClick}
           />
@@ -45,7 +45,7 @@ export class HomeHeader extends Component {
           content='Offer Help'
           size='huge'
           href='/volunteer-with-us'
-          className="Home__OfferHelpButton"
+          className="Home__Button"
           active={activeItem === 'offer-help'}
           onClick={this.handleItemClick}
           />

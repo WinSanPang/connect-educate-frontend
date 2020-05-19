@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { Header, Container, Card, Grid, Button, Dropdown } from 'semantic-ui-react';
+import { Header, Container, Card, Button, Dropdown } from 'semantic-ui-react';
 
 import { isUserLoggedIn } from 'helpers';
-import { fetchUnassignedRequests } from 'actions';
 
 import './UnassignedMessages.scss';
-import Aux from 'hoc/Aux';
 import UnassignedMessageList from 'components/UnassignedMessages/UnassignedMessageList';
 import Messages from 'containers/Messages';
 
@@ -43,141 +40,45 @@ class UnassignedMessages extends Component {
         if(!isUserLoggedIn()) {
             return( <Redirect to="/login"/> );
         }
-/* 
-        const { fetchUnassignedRequests } = this.props;
-        fetchUnassignedRequests();
- */    }
+    }
 
     render() {
-        const unassignedMessages = [
-            {
-                'id': 1,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 1,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            },
-            {
-                'id': 2,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 2,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            },
-            {
-                'id': 3,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 3,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            },
-            {
-                'id': 4,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 4,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            },
-            {
-                'id': 5,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 5,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            },
-            {
-                'id': 6,
-                'from': 'test',
-                'last_interaction': 'shfgsdfhgsdfhdsgfgdhsfsdf',
-                'created_at': Date.now(),
-                'messages': [
-                    {
-                        'id': 6,
-                        'from': 'user',
-                        'content': 'hdfjsdghsjdf',
-                        'created_at': Date.now()
-                    }
-                ]
-            }
-        ]
 
         let page = (
-            <Aux>
+            <div className='UnassignedMessages'>
                 <Button 
                     className='UnassignedMessages__Button'
                     onClick={this.myMessagesClickedHandler}
                     >My Messages</Button>
-                    <Container fluid className='UnassignedMessages'>
-                        <Grid.Column className='UnassignedMessages__Grid'>
+                    <Container fluid className='UnassignedMessages__Container'>
                         <Header.Content className='UnassignedMessages_Header'>Unassigned Requests</Header.Content>
-                        <Container
-                            style={{marginBottom: '2%'}}>
-                                <Header>
-                                Filter by:
-                                </Header>
-                                <Dropdown 
-                                placeholder='Skills' 
-                                multiple 
-                                selection 
-                                options={skills} 
-                                style={{marginRight: '2%'}}
-                                />
-                                <Dropdown 
-                                placeholder='Languages' 
-                                multiple 
-                                selection 
-                                options={languages} 
-                                />
-                            </Container>
-                        <Card.Group className='UnassignedMessages__CardGroup'>
-                            <UnassignedMessageList 
-                                unassignedMessages={unassignedMessages}
-                                requestId="Sarah"
-                                />
-                        </Card.Group>
-                        </Grid.Column>
+                            <Container
+                                style={{marginBottom: '2%'}}>
+                                    <Header>
+                                    Filter by:
+                                    </Header>
+                                    <Dropdown 
+                                    placeholder='Skills' 
+                                    multiple 
+                                    selection 
+                                    options={skills} 
+                                    style={{marginRight: '2%'}}
+                                    />
+                                    <Dropdown 
+                                    placeholder='Languages' 
+                                    multiple 
+                                    selection 
+                                    options={languages} 
+                                    />
+                                </Container>
                     </Container>
-                    </Aux>
+                    <Card.Group className='UnassignedMessages__CardGroup'>
+                        <UnassignedMessageList 
+                            />
+                    </Card.Group>
+                    </div>
             
         )
-        /* 
-        console.log('cheeses?', this.props.unassignedMessagess);
-        console.log('cheeses??', this.props.fetchUnassignedRequests); */
 
         if (!this.state.showUnassignedMessages) {
             page = (
@@ -193,15 +94,5 @@ class UnassignedMessages extends Component {
         )
     }
 }
-/* 
-const mapStateToProps = (state) => ({
-    unassignedMessagess: state.unassignedRequests
-});
-
-const mapDispatchToProps = ( dispatch ) => ({
-	fetchUnassignedRequests: () => {
-		dispatch(fetchUnassignedRequests());
-	},
-}); */
 
 export default withRouter(UnassignedMessages);

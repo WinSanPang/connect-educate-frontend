@@ -1,20 +1,24 @@
 @import '../../scss/colours.scss';
+@import '../../scss/fonts.scss';
 
 .AskForHelp {
   margin: 5%;
 }
 
-.AskForHelp__Button {
-  margin: 5%;
-  font-size: 40px;
+.AskForHelp__Teal {
   color: $primary;
-  background: $background-primary;
+}
+
+.AskForHelp__Button {
+  margin: 0 5%;
+  font-size: $big-button;
+  color: $white;
+  background: $primary;
   padding: 2% 4%;
-  border: 5px solid $primary;
-  border-radius: 25px;
+  border-radius: 50px;
 }
 
 .AskForHelp a:hover {
   transition: all ease 0.5s;
-  color: black;
+  color: $secondary;
 }

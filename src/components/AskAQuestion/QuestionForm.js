@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { Segment, Message } from "semantic-ui-react";
+import { Segment } from "semantic-ui-react";
 
-import "./QuestionForm.css";
-import { validateEmail, validatePassword } from "./Validation";
+import "./QuestionForm.scss";
+import { validateEmail } from "./Validation";
 
 import { sendQuery } from "../../actions/askAQuestion";
-import QuerySubmitted from "../../containers/QuerySubmitted";
 
 function QuestionForm({parentRequestSent, parentRequestError, sendQueryData}) {
   const [name, setName] = useState("");

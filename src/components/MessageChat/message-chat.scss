@@ -1,3 +1,5 @@
+@import '../../scss/colours.scss';
+
 .chat__output {
     height: 100%;
 	transform: rotate(180deg);
@@ -33,4 +35,11 @@
 
 .chat__textarea textarea {
     resize: none !important;
+}
+
+.ui.primary.button {
+    color: white;
+    background-color: $primary;
+    border-radius: 25px;
+    margin-top: 10px;
 }

@@ -1,0 +1,17 @@
+@import '../../../../scss/colours.scss';
+@import '../../../../scss/fonts.scss';
+
+.Footer {
+  background-color: $primary;
+  margin-top: 3%;
+  padding: 5%;
+
+}
+
+.Footer__Paragraph {
+  color: $white;
+  font-size: $paragraph;
+  font-weight: bold;
+  float: left;
+  padding-top: 3%;
+}

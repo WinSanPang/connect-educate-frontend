@@ -5,24 +5,13 @@
   margin: 5%;
 }
 
-.Home__AskForHelpButton {
+.Home__Button {
   margin: 0 5%;
   font-size: $big-button;
-  color: $primary;
-  background: $background-primary;
+  color: $white;
+  background: $primary;
   padding: 2% 4%;
-  border: 5px solid $primary;
-  border-radius: 25px;
-}
-
-.Home__OfferHelpButton {
-  margin: 0 5%;
-  font-size: $big-button;
-  color: $secondary;
-  background: $background-primary;
-  padding: 2% 4%;
-  border: 5px solid $secondary;
-  border-radius: 25px;
+  border-radius: 50px;
 }
 
 .Home__Paragraph {
@@ -31,5 +20,5 @@
 
 .HomeHeader a:hover {
   transition: all ease 0.5s;
-  color: black;
+  color: $secondary;
 }

@@ -1,0 +1,9 @@
+@import '../../scss//colours.scss';
+
+.message-list .content:first-of-type {
+    flex-grow: unset;
+}
+
+.message-list-header {
+    color: $primary !important;
+}
