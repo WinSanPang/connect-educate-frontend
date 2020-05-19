@@ -18,7 +18,6 @@ import ResetPassword from './containers/ResetPassword';
 import NotFound from './containers/NotFound';
 import AskForHelp from './containers/AskForHelp'
 import AskAQuestion from './containers/AskAQuestion';
-import Mentors from './containers/Mentors';
 import Resources from './containers/Resources/Resources';
 import Contact from './containers/Contact/Contact';
 import Messages from 'containers/Messages';
@@ -49,7 +48,6 @@ class App extends Component {
         <Route path="/ask-for-help" component={AskForHelp} />
         <Route path="/ask-a-question" component={AskAQuestion} />
         <Route path="/query-submitted" component={QuerySubmitted} />
-        <Route path="/our-mentors" component={Mentors}/>
         <Route path="/resources" component={Resources}/>
         <Route path="/contact" component={Contact}/>
         <Route path="*" component={NotFound}/>
