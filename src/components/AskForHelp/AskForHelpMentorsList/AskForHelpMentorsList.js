@@ -57,7 +57,7 @@ export class MentorsList extends Component {
               />
         </Container> */}
         <Container>
-          <Grid columns={2}>
+          <Grid stackable columns={2}>
             <Grid.Column>
               <Segment className='AskForHelpMentorsList__Card'>
                 <Image
@@ -123,7 +123,7 @@ export class MentorsList extends Component {
               </Segment>
             </Grid.Column>
           </Grid>
-          <Grid columns={2}>
+          <Grid stackable columns={2}>
             <Grid.Column>
               <Segment>
                 <Image

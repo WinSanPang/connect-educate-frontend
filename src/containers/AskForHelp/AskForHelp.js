@@ -18,9 +18,8 @@ export class AskForHelp extends Component {
       <Aux>
         <Header 
           as='h1'
-          textAlign='center'
-          style={{fontSize:'70px'}}>
-            <Header.Content className='AskForHelp__Teal'>
+          textAlign='center'>
+            <Header.Content className='AskForHelp__Header'>
             Get the help you need
             </Header.Content>
         </Header>

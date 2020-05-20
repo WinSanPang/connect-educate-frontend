@@ -25,3 +25,13 @@
   margin: 2% 0;
   padding: 0 15%;
 }
+
+@media only screen and (max-width: 767px) {
+  .Contact__Header {
+    font: $heading-small;
+  }
+
+  .Contact__Paragraph {
+    margin: 10%;
+  }
+}

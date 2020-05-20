@@ -57,7 +57,9 @@ class App extends Component {
     return (
       <div className='App'>
         <Layout>
-          {routes}
+          <div className='MainRoute'>
+            {routes}
+          </div>
         </Layout>
       </div>
     );

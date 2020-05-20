@@ -3,3 +3,38 @@
   display: flex;
   flex-direction: column;
 }
+
+.MainRoute {
+  margin-top: 2%;
+}
+
+@media only screen and (max-width: 767px) {
+  .MainRoute {
+    margin-top: 30%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .MainRoute {
+    margin-top: 35%;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .MainRoute {
+    margin-top: 45%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .MainRoute {
+    margin-top: 55%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .MainRoute {
+    margin-top: 65%;
+  }
+}
+

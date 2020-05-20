@@ -6,6 +6,7 @@ import Aux from '../../hoc/Aux';
 import JigsawTwo from '../../assets/jigsaw-2-small.png';
 import LearnThroughPlay from '../../assets/learn-play.png';
 import Books from '../../assets/books-small.png';
+import ColourPencilLessons from '../../assets/colour-lessons-2.png';
 
 const Resources = () => (
   <Aux>
@@ -17,10 +18,9 @@ const Resources = () => (
       <p className="Resources__Paragraph">
           We know it can be hard to know what activities or learning materials to use with your child, so here's a list to get you inspired:
       </p>
-      <Container className='Resources'>
-      </Container>
+      <Image src={ColourPencilLessons} alt='colour pencil lessons' style={{margin: '10% 0'}}/>
       <Container>
-      <Grid columns={3}>
+      <Grid stackable columns={3}>
         <Grid.Row>
           <Grid.Column>
             <Image

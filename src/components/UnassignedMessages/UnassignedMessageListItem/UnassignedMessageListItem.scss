@@ -2,7 +2,6 @@
 @import '../../../scss/fonts.scss';
 
 .UnassignedMessageListItem__Card {
-  min-width: 500px !important;
   min-height: 250px !important;
   margin: 2% !important;
   border: 4px solid $primary !important;
@@ -33,4 +32,16 @@
 
 .UnassignedMessageListItem__Button:hover {
   background: $secondary !important;
+}
+
+@media only screen and (min-width: 550px) {
+  .UnassignedMessageListItem__Card {
+    min-width: 500px !important;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .MainRoute {
+    margin-top: 65%;
+  }
 }

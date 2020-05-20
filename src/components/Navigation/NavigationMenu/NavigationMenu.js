@@ -36,7 +36,8 @@ class NavigationMenu extends Component {
 
     return (
       <div className='NavigationMenu'>
-        <Menu  
+        <Menu
+          stackable  
           size='huge'
           borderless
           href='/'

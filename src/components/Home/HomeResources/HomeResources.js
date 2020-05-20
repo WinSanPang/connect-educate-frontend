@@ -16,7 +16,7 @@ const HomeResources = () => (
       <Container className='HomeResources__Paragraph'>
         We know it can be hard to know what activities or learning materials to use with your child, so we've listed a few to help get you started. See our Resources page <a href='/resources' rel="noopener noreferrer">here</a> for the full list! 
       </Container>
-    <Grid columns={3}>
+    <Grid stackable columns={3}>
       <Grid.Row>
         <Grid.Column>
           <Image

@@ -2,7 +2,10 @@
 @import '../../scss/fonts.scss';
 
 .UnassignedMessages {
-    height: 100vh;
+    height: auto;
+    background: url('../../assets/orange-background-pencils.png') no-repeat 0 0;
+    background-size: cover;
+    background-position: center;
 }
 
 .UnassignedMessages__Container {
@@ -31,3 +34,23 @@
     transition: all ease 0.5s;
     color: $secondary !important;
   }
+
+  @media only screen and (max-width: 768px) {
+    .UnassignedMessages {
+        text-align: center;
+    }
+
+    .UnassignedMessages_Header {
+        font: $heading-small;
+    }
+
+    .UnassignedMessages__Button {
+        margin-top: 5% !important;
+      }
+  }
+  
+  /* @media only screen and (max-width: 500px) {
+    .UnassignedMessages__Button {
+      margin-top: 5%;
+    }
+  } */

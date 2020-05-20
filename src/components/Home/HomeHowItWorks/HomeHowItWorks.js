@@ -10,7 +10,7 @@ const HomeHowItWorks = () => (
     <Header.Content className="Home__Subheading">
         How it Works
     </Header.Content>
-    <Grid columns={3}>
+    <Grid stackable columns={3}>
       <Grid.Row>
         <Grid.Column>
           <Header as='h2' icon className="Home__Teal">

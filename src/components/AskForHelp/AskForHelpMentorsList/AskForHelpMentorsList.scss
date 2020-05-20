@@ -7,3 +7,9 @@
   font: $subheading;
   color: $primary;
 }
+
+@media only screen and (max-width: 767px) {
+  .AskForHelpMentors__Header {
+    font: $subheading-small;
+  }
+}
