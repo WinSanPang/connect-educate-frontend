@@ -1,0 +1,32 @@
+@import '../../../scss/colours.scss';
+@import '../../../scss/fonts.scss';
+
+.PrivacyPolicy {
+  text-align: center;
+  padding: 5% 0;
+}
+
+.PrivacyPolicy__Header {
+  font: $heading;
+  color: $primary;
+}
+
+.PrivacyPolicy__Subheader {
+  font: $subheading;
+  color: $primary;
+}
+
+.PrivacyPolicy__Paragraph {
+  font-size: $paragraph;
+  margin: 5% 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .PrivacyPolicy__Header {
+    font: $heading-small;
+  }
+
+  .PrivacyPolicy__Subheader {
+    font: $subheading-small;
+  }
+}

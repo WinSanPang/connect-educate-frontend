@@ -3,8 +3,7 @@
 
 .Footer {
   background-color: $primary;
-  padding: 5%;
-
+  padding: 4%;
 }
 
 .Footer__Paragraph {
@@ -12,5 +11,17 @@
   font-size: $paragraph;
   font-weight: bold;
   float: left;
-  padding-top: 3%;
+  padding-top: 1%;
+}
+
+.Footer__Terms {
+  background-color: $primary;
+  padding: 2%;
+  text-align: center;
+  color: $white;
+}
+
+.Footer__Terms a {
+  color: $white;
+  padding: 0 2%;
 }

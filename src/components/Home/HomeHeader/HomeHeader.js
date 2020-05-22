@@ -36,14 +36,12 @@ export class HomeHeader extends Component {
           <Button.Content 
           content='Ask for Help'
           href='/ask-for-help'
-          size='huge'
           className="Home__Button"
           active={activeItem === 'ask-for-help'}
           onClick={this.handleItemClick}
           />
         <Button.Content 
           content='Offer Help'
-          size='huge'
           href='/volunteer-with-us'
           className="Home__Button"
           active={activeItem === 'offer-help'}

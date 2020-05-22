@@ -18,7 +18,7 @@ const Contact = () => {
               </Header.Content>
           </Header>
           <Header.Content className='Contact__Paragraph'>
-              For support enquiries or if you wish to delete your account, please contact us via email by clicking <a href="mailto:info@maslaha.org?Subject=Conncected%20Learning%20Support%20Request">here</a>.
+              For support enquiries or if you wish to delete your account, please contact us via email by clicking <a href="mailto:info@maslaha.org?Subject=Connected%20Learning%20Support%20Request">here</a>.
           </Header.Content>
           <Image src={ConnectedLearning} alt = 'colour-pencils' className='Contact__ColourPencil'/>
 {/*           <Header>

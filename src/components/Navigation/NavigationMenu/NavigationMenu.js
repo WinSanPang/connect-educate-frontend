@@ -30,7 +30,7 @@ class NavigationMenu extends Component {
               onClick={this.handleItemClick}
               href='/messages'
             >
-              Requests
+              Messages
               {/* <Label color='red'>3</Label> */}
             </Menu.Item> );
 
@@ -47,13 +47,22 @@ class NavigationMenu extends Component {
           </Menu.Item>
 
           <Menu.Item
-            name='Requests'
+            name='Resources'
             active={activeItem === 'requests'}
             onClick={this.handleItemClick}
             href='/resources'
             position='right'
           >
             Resources
+          </Menu.Item>
+
+          <Menu.Item
+            name='About'
+            active={activeItem === 'about'}
+            onClick={this.handleLogoutClick.bind(this)}
+            href='/about-us'
+          >
+            About Us
           </Menu.Item>
 
           <Menu.Item
@@ -66,7 +75,7 @@ class NavigationMenu extends Component {
           </Menu.Item>
 
           { user || isUserLoggedIn() ? Messages : '' }
-
+          
           <Menu.Item
             name='Login'
             active={activeItem === 'login'}

@@ -1,0 +1,23 @@
+@import '../../../scss/colours.scss';
+@import '../../../scss/fonts.scss';
+
+.TermsAndConditions {
+  text-align: center;
+  padding: 5% 0;
+}
+
+.TermsAndConditions__Header {
+  font: $heading;
+  color: $primary;
+}
+
+.TermsAndConditions__Paragraph {
+  font-size: $paragraph;
+  margin: 5% 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .TermsAndConditions__Header {
+    font: $heading-small;
+  }
+}

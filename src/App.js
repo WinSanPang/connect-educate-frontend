@@ -23,7 +23,10 @@ import Contact from './containers/Contact/Contact';
 import Messages from 'containers/Messages';
 import UnassignedMessages from './containers/UnassignedMessages';
 import QuerySubmitted from './containers/QuerySubmitted';
-
+import AboutUs from './containers/AboutUs/AboutUs';
+import TermsAndConditions from './components/Terms/TermsAndConditions/TermsAndConditions';
+import PrivacyPolicy from './components/Terms/PrivacyPolicy/PrivacyPolicy';
+import SaferSpacePolicy from './components/Terms/SaferSpacePolicy/SaferSpacePolicy';
 
 class App extends Component {
   render() {
@@ -50,6 +53,10 @@ class App extends Component {
         <Route path="/query-submitted" component={QuerySubmitted} />
         <Route path="/resources" component={Resources}/>
         <Route path="/contact" component={Contact}/>
+        <Route path="/about-us" component={AboutUs}/>
+        <Route path="/terms-conditions" component={TermsAndConditions}/>
+        <Route path="/privacy-policy" component={PrivacyPolicy}/>}
+        <Route path="/safer-space-policy" component={SaferSpacePolicy}/>
         <Route path="*" component={NotFound}/>
       </Switch>
     )

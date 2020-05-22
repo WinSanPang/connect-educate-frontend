@@ -1,0 +1,63 @@
+@import '../../scss/colours.scss';
+@import '../../scss/fonts.scss';
+
+.AboutUs {
+  text-align: center;
+}
+
+.AboutUs__Header {
+  font: $heading;
+  color: $primary;
+}
+
+.AboutUs__Subheader {
+  font: $subheading;
+  color: $primary;
+  margin-top: 5%;
+}
+
+.AboutUs__Paragraph {
+  font-size: $paragraph;
+  margin: 5% 0;
+}
+
+.AboutUs__Button {
+  margin: 0 5%;
+  margin-bottom: 5%;
+  font-size: $big-button;
+  color: $white;
+  background: $primary;
+  padding: 2% 4%;
+  border-radius: 50px;
+}
+
+.AboutUs a:hover {
+  transition: all ease 0.5s;
+  color: $secondary;
+}
+
+.AboutUs__ButtonContainer {
+  margin-top: 10%;
+  margin-bottom: 8%;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .AboutUs__Button {
+    font-size: $button;
+  }  
+
+  .AboutUs__Header {
+    font: $heading-small;
+  }
+
+  .AboutUs__Subheader {
+    font: $subheading-small;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .AboutUs__Button {
+    font-size: $small-button;
+  }
+}
