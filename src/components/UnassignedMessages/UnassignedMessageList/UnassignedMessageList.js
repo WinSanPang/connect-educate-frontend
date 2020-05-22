@@ -1,24 +1,42 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Aux from 'hoc/Aux';
 import UnassignedMessageListItem from 'components/UnassignedMessages/UnassignedMessageListItem';
-import './UnassignedMessageList.css';
+import './UnassignedMessageList.scss';
+import { fetchUnassignedRequests } from 'actions';
 
 class UnassignedMessageList extends Component {
-    renderUnassignedMessageListItems() {
-        const { unassignedMessages } = this.props;
-        const elements = Object.entries( unassignedMessages ).map( item =>  <UnassignedMessageListItem key={item.id}/> );
 
-        return elements;
+    componentDidMount() {
+        const { fetchUnassignedRequests } = this.props;
+        fetchUnassignedRequests();
     }
-    
+
+    renderUnassignedMessageListItems() {
+        if(!this.props.unassignedMessagess){
+            return; //Add a spinner    
+        }
+        const test = this.props.unassignedMessagess.map((item) => <UnassignedMessageListItem key={item.id} header={item.id} createdDate={item.created_at} age={item.childs_age} skill={item.skill} language={item.task_language} content={item.content}/>);
+        return test;
+    }
+
     render() {
         return (
-          <Aux>
-            { this.renderUnassignedMessageListItems() }
-        </Aux>
+            <div className='UnassignedMessageList'>
+            {this.renderUnassignedMessageListItems()}
+            </div>
         )
     }
 }
 
-export default UnassignedMessageList;
+const mapStateToProps = (state) => ({
+    unassignedMessagess: state.unassignedRequests
+});
+
+const mapDispatchToProps = ( dispatch ) => ({
+	fetchUnassignedRequests: () => {
+		dispatch(fetchUnassignedRequests());
+	},
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UnassignedMessageList);

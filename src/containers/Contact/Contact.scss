@@ -1,0 +1,37 @@
+@import '../../scss/colours.scss';
+@import '../../scss/fonts.scss';
+
+.Contact {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.Contact__Header {
+  font: $heading;
+  color: $primary;
+}
+
+.Contact__Paragraph {
+  font-size: $paragraph;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.Contact__OrangeIcon {
+  color: $secondary
+}
+
+.Contact__ColourPencil {
+  margin: 2% 0;
+  padding: 0 15%;
+}
+
+@media only screen and (max-width: 767px) {
+  .Contact__Header {
+    font: $heading-small;
+  }
+
+  .Contact__Paragraph {
+    margin: 10%;
+  }
+}

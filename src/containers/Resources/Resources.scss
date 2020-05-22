@@ -1,0 +1,32 @@
+@import '../../scss/colours.scss';
+@import '../../scss/fonts.scss';
+
+.Resources__Header {
+  font: $heading;
+  color: $primary;
+}
+
+.Resources__Paragraph {
+  font-size: $paragraph;
+}
+
+.Resources__Icon {
+  padding: 10% !important;
+}
+
+.Resources__TealIcon {
+  color: $primary;
+  padding: 10% !important;
+}
+
+.Resources__OrangeIcon {
+  color: $secondary;
+  padding: 10% !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .Resources__Header {
+    font: $heading-small;
+    margin-bottom: 5%;
+  }
+}

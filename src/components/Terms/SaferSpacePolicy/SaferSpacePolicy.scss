@@ -1,0 +1,29 @@
+@import '../../../scss/colours.scss';
+@import '../../../scss/fonts.scss';
+
+.SaferSpacePolicy {
+  text-align: center;
+  padding: 5% 0;
+}
+
+.SaferSpacePolicy__Header {
+  font: $heading;
+  color: $primary;
+}
+
+.SaferSpacePolicy__Paragraph {
+  font-size: $paragraph;
+  margin: 5% 0;
+}
+
+.SaferSpacePolicy__BulletPoints {
+  font-size: $paragraph;
+  margin: 5% 0;
+  text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+  .SaferSpacePolicy__Header {
+    font: $heading-small;
+  }
+}

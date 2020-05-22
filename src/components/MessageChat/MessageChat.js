@@ -3,7 +3,7 @@ import { Card, Form, TextArea } from 'semantic-ui-react';
 
 import Bubble from './Bubble';
 import Tags from './Tags';
-import './message-chat.css';
+import './message-chat.scss';
 
 class MessageChat extends Component {
     renderBubbles() {

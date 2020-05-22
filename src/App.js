@@ -18,13 +18,15 @@ import ResetPassword from './containers/ResetPassword';
 import NotFound from './containers/NotFound';
 import AskForHelp from './containers/AskForHelp'
 import AskAQuestion from './containers/AskAQuestion';
-import Mentors from './containers/Mentors';
 import Resources from './containers/Resources/Resources';
 import Contact from './containers/Contact/Contact';
 import Messages from 'containers/Messages';
 import UnassignedMessages from './containers/UnassignedMessages';
-import querySubmitted from './containers/QuerySubmitted'
-
+import QuerySubmitted from './containers/QuerySubmitted';
+import AboutUs from './containers/AboutUs/AboutUs';
+import TermsAndConditions from './components/Terms/TermsAndConditions/TermsAndConditions';
+import PrivacyPolicy from './components/Terms/PrivacyPolicy/PrivacyPolicy';
+import SaferSpacePolicy from './components/Terms/SaferSpacePolicy/SaferSpacePolicy';
 
 class App extends Component {
   render() {
@@ -41,19 +43,20 @@ class App extends Component {
         <Route path="/forgot-password" component={ForgotPassword}/>
         <Route path="/reset-password" component={ResetPassword}/>
         <Route path="/messages" render={() => (
-          // TODO: Replace <NotFound/> placeholder
           isUserLoggedIn() ? <Messages/> : <Redirect to={{ pathname: '/login', state: '/messages' }}/>
         )}/>
         <Route path="/unassigned-requests" render={() => (
-          // TODO: Replace <NotFound/> placeholder
           isUserLoggedIn() ? <UnassignedMessages/> : <Redirect to={{ pathname: '/login', state: '/unassigned-requests' }}/>
         )}/>
         <Route path="/ask-for-help" component={AskForHelp} />
         <Route path="/ask-a-question" component={AskAQuestion} />
-        <Route path="/query-submitted" component={querySubmitted} />
-        <Route path="/our-mentors" component={Mentors}/>
+        <Route path="/query-submitted" component={QuerySubmitted} />
         <Route path="/resources" component={Resources}/>
         <Route path="/contact" component={Contact}/>
+        <Route path="/about-us" component={AboutUs}/>
+        <Route path="/terms-conditions" component={TermsAndConditions}/>
+        <Route path="/privacy-policy" component={PrivacyPolicy}/>}
+        <Route path="/safer-space-policy" component={SaferSpacePolicy}/>
         <Route path="*" component={NotFound}/>
       </Switch>
     )
@@ -61,7 +64,9 @@ class App extends Component {
     return (
       <div className='App'>
         <Layout>
-          {routes}
+          <div className='MainRoute'>
+            {routes}
+          </div>
         </Layout>
       </div>
     );

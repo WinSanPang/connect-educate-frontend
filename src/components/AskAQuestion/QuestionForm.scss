@@ -1,0 +1,40 @@
+@import '../../scss/colours.scss';
+
+.question-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.question-form {
+  width: 80%;
+  padding-top: 30px;
+}
+
+.question-form h1 {
+  color: $primary;
+}
+
+.dropdown-menu {
+  padding-top: 3px;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #d8000c;
+  background-color: #ffbaba;
+  padding-bottom: 20px;
+}
+
+.request-error {
+  color: #d8000c;
+  background-color: #ffbaba;
+  width: 40%;
+  text-align: center;
+  padding: 10px 10px;
+  margin-top: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}

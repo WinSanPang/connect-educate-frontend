@@ -1,0 +1,47 @@
+@import '../../../scss/colours.scss';
+@import '../../../scss/fonts.scss';
+
+.UnassignedMessageListItem__Card {
+  min-height: 250px !important;
+  margin: 2% !important;
+  border: 4px solid $primary !important;
+  border-radius: 25px !important;
+  box-shadow: none !important;
+  padding: 1% !important;
+}
+
+.UnassignedMessageListItem__CardContent {
+  text-align: left;
+}
+
+.UnassignedMessageListItem__CardHeader {
+  text-align: center;
+}
+
+.UnassignedMessageListItem__Button {
+  margin-top: 5% !important;
+  color: $white !important;
+  background: $primary !important;
+  border-radius: 50px !important;
+}
+
+.UnassignedMessageListItem__Card:hover {
+  border: 4px solid $secondary !important;
+  font-weight: bold;
+}
+
+.UnassignedMessageListItem__Button:hover {
+  background: $secondary !important;
+}
+
+@media only screen and (min-width: 550px) {
+  .UnassignedMessageListItem__Card {
+    min-width: 500px !important;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .MainRoute {
+    margin-top: 65%;
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../scss/colours.scss';
+@import '../../scss/fonts.scss';
+
+.QuerySubmitted {
+    text-align: center;
+}
+
+.QuerySubmitted__Header {
+    font: $heading;
+    color: $secondary;
+}
+
+.QuerySubmitted__Paragraph {
+    font-size: $paragraph;
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+
+.QuerySubmitted__Button {
+    font-size: $big-button;
+    color: $primary;
+    background: $background-primary;
+    padding: 1% 1%;
+    border: 5px solid $primary;
+    border-radius: 25px;
+}
+
+.QuerySubmitted a:hover {
+    transition: all ease 0.5s;
+    color: black;
+  }
+
+
+.QuerySubmitted__TealIcon {
+    color: $primary
+}

@@ -26,10 +26,19 @@ export default ( state, action ) => {
             newState.resetPasswordError = action.error;
             break;
         case 'PARENT_REQUEST_SENT':
-            newState.parentRequest = action.payload;
+            newState.parentRequestSent = action.payload;
             break;
         case 'PARENT_REQUEST_FAIL':
             newState.parentRequestError = action.error;
+            break;
+        case 'CLAIM_TASK_SUCCESS':
+            newState.claimTaskSuccess = action.payload;
+            break;
+        case 'CLAIM_TASK_FAIL':
+            newState.claimTaskFail = action.error;
+            break;
+        case 'FETCH_UNASSIGNED_REQUESTS':
+            newState.unassignedRequests = action.payload;
             break;
         default:
             break;

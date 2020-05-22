@@ -1,0 +1,23 @@
+@import '../../../scss/colours.scss';
+@import '../../../scss/fonts.scss';
+
+.AskForHelpHowItWorks__Header {
+  margin: 5%;
+  font: $subheading;
+  color: $primary;
+}
+
+.AskForHelpHowItWorks__Teal {
+  color: $primary !important;
+}
+
+.AskForHelpHowItWorks__Orange {
+  color: $secondary !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .AskForHelpHowItWorks__Header {
+    font: $subheading-small;
+    margin-top: 10%;
+  }
+}

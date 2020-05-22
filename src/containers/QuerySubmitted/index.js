@@ -1,17 +1,31 @@
 import React from 'react';
+import { Container, Header, Icon, Button } from 'semantic-ui-react';
 
-import './index.css';
+import './index.scss';
 
 const QuerySubmitted = () => {
-    return(
-        <div className="query-submitted">
-            <h1>Query Submitted</h1>
-            <h4 rows="3" >Thank your submitting your query- you are now logged in. 
-            <br/> You will get emailed when a mentor has responded to you
-            </h4>
-            <a role="button" href="/messages" class="c-btn">View Requests</a>
-        </div>
+    return (
+        <Container className='QuerySubmitted' fluid>          
+          <Header as='h1' icon>
+            <Icon 
+              name='send'
+              size='large'
+              className="QuerySubmitted__TealIcon"
+              />
+            <Header.Content className='QuerySubmitted__Header'>
+              Query Submitted
+              </Header.Content>
+          </Header>
+          <Header.Content className='QuerySubmitted__Paragraph'>
+          Thank your submitting your query - you are now logged in. You will receive an email when a mentor has responded to you.
+          </Header.Content>
+          <Button.Content 
+          content='View Requests'
+          href='/messages'
+          className="QuerySubmitted__Button"
+          />
+        </Container>
     )
 }
 
-export default QuerySubmitted
+export default QuerySubmitted;

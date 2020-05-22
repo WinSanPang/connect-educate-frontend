@@ -1,0 +1,24 @@
+@import '../../scss/colours.scss';
+@import '../../scss/fonts.scss';
+
+.NotFound {
+  text-align: center;
+  padding-top: 10%;
+  height: 70vh;
+}
+
+.NotFound__Header {
+  font: $heading !important;
+  color: $primary !important;
+}
+
+.NotFound__Paragraph {
+ font-size: $paragraph; 
+ padding: 5%;
+}
+
+@media only screen and (max-width: 767px) {
+  .NotFound__Header {
+    font: $heading-small !important;
+  }
+}

@@ -1,0 +1,44 @@
+@import '../../scss/colours.scss';
+@import '../../scss/fonts.scss';
+
+.AskForHelp {
+  margin: 5%;
+}
+
+.AskForHelp__Teal {
+  color: $primary;
+}
+
+.AskForHelp__Header {
+  font: $heading;
+  color: $primary;
+}
+
+.AskForHelp__Button {
+  margin: 0 5%;
+  font-size: $big-button;
+  color: $white;
+  background: $primary;
+  padding: 2% 4%;
+  border-radius: 50px;
+}
+
+.AskForHelp a:hover {
+  transition: all ease 0.5s;
+  color: $secondary;
+}
+
+@media only screen and (max-width: 767px) {
+  .AskForHelp {
+    margin: 10%;
+  }
+
+  .AskForHelp__Header {
+    font: $heading-small;
+    margin-top: 5%;
+  }
+
+  .AskForHelp__Button {
+    font-size: $button;
+  }
+}

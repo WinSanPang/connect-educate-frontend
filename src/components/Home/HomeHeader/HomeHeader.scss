@@ -1,0 +1,36 @@
+@import '../../../scss/colours.scss';
+@import '../../../scss/fonts.scss';
+
+.HomeHeader {
+  margin: 5%;
+}
+
+.Home__Button {
+  margin: 0 5%;
+  font-size: $big-button;
+  color: $white;
+  background: $primary;
+  padding: 2% 4%;
+  border-radius: 50px;
+}
+
+.Home__Paragraph {
+  font-size: $paragraph;
+}
+
+.HomeHeader a:hover {
+  transition: all ease 0.5s;
+  color: $secondary;
+}
+
+@media only screen and (max-width: 767px) {
+  .Home__Button {
+    font-size: $button;
+  }  
+}
+
+@media only screen and (max-width: 350px) {
+  .Home__Button {
+    font-size: $small-button;
+  }
+}

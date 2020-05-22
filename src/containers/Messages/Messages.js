@@ -6,7 +6,7 @@ import { fetchMessages } from 'actions';
 import { isUserLoggedIn } from 'helpers';
 import { Grid, Button } from 'semantic-ui-react';
 
-import './messages.css';
+import './messages.scss';
 import Aux from 'hoc/Aux';
 import MessageList from 'components/MessageList';
 import MessageChat from 'components/MessageChat';
@@ -43,6 +43,7 @@ class Messages extends Component {
             <Aux>
             <Button 
                 href='/unassigned-requests'
+                className='messages__button'
                 >Unassigned Requests</Button>
                 <Grid
                     celled

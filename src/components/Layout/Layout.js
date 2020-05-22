@@ -3,7 +3,7 @@ import history from 'helpers/history';
 
 import Aux from '../../hoc/Aux';
 import NavigationMenu from '../Navigation/NavigationMenu/NavigationMenu';
-import Footer from '../Navigation/NavigationMenu/Footer/Footer';
+import Footer from '../Navigation/Footer/Footer';
 
 import './layout.css';
 
