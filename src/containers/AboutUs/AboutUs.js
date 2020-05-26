@@ -53,7 +53,7 @@ class AboutUs extends Component {
           Special thanks to...
         </Header.Content>
         <p className='AboutUs__Paragraph'>
-          The Connected Learning website was developed as part of a <a href='https://womendrivendev.org/ukvscovid19' target='_blank' rel='noopener noreferrer'>hackathon</a> to build solutions to problems posed by Covid 19. The team who have worked on the project are:
+          The Connected Learning website was developed as part of a <a href='https://womendrivendev.org/ukvscovid19' target='_blank' rel='noopener noreferrer'>hackathon</a> to build solutions to problems posed by Covid 19. The team who worked on the project with Maslaha are:
         </p>
         <AboutUsTeam/>
       </Container>

@@ -8,6 +8,23 @@
   color: $primary;
 }
 
+.AskForHelpMentors__Button {
+  color: $white !important;
+  background: $primary !important;
+  border-radius: 50px !important;
+  margin: 1% !important;
+}
+
+.AskForHelpMentors__Button:hover {
+  cursor: default !important;
+}
+
+.AskForHelpMentors__IconAttributions {
+  text-align: center;
+  font-style: italic;
+  color: grey;
+}
+
 @media only screen and (max-width: 767px) {
   .AskForHelpMentors__Header {
     font: $subheading-small;

@@ -124,6 +124,8 @@ const Resources = () => (
           </GridColumn>
         </Grid.Row>
       </Grid>
+      <br/>
+      <br/>
       </Container>
     </Container>
   </Aux>

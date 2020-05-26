@@ -18,7 +18,7 @@ const footer = (props) => {
       <div className='Footer__Terms'>
         <a href='/terms-conditions'>Terms and Conditions</a>
         <a href='/privacy-policy'>Privacy Policy</a>
-        <a href='/safer-space-policy'>Safer Space Policy</a>
+        <a href='/safer-spaces-policy'>Safer Spaces Policy</a>
       </div>
       </div>
     )

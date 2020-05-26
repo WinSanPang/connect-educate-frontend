@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Grid, Container, Card, Image} from 'semantic-ui-react';
 
 import './AboutUsTeam.scss';
-import WinSanPang from '../../../assets/winsanpang.png';
 
 const aboutUsTeam = () => {
   return (

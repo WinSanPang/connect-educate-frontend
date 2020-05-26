@@ -8,7 +8,7 @@ const userFetchLogin = user => {
     return dispatch => {
         return fetchData('users/sign_in', request)
             .then(response => {
-                // TODO: replace with success action
+                // TODO: remove mockResult and un-comment in the success action below
                 mockResult(dispatch)
 
                 // if (addToLocal(response.payload)) {

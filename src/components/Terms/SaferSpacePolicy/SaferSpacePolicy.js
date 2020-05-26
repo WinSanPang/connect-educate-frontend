@@ -7,7 +7,7 @@ const saferSpacePolicy = () => {
   return (
     <Container className='SaferSpacePolicy'>
       <Header.Content className='SaferSpacePolicy__Header'>
-        Safer Space Policy
+        Safer Spaces Policy
       </Header.Content>
       <p className='SaferSpacePolicy__Paragraph'>
         Connected Learning aims to create a respectful, understanding and kind space where people feel comfortable to ask questions and seek guidance and support.
