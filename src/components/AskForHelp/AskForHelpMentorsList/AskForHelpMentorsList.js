@@ -155,7 +155,7 @@ export class MentorsList extends Component {
                   size='small'
                   circular
                   floated='left'
-                  src='https://image.flaticon.com/icons/svg/194/194938.svg'
+                  src='https://image.flaticon.com/icons/svg/190/190603.svg'
                   />
                 <Image 
                   size='tiny'

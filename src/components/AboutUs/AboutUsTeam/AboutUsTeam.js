@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Container, Card, Image} from 'semantic-ui-react';
 
 import './AboutUsTeam.scss';
@@ -33,7 +33,7 @@ const aboutUsTeam = () => {
         <Grid.Column>
           <Card raised>
             <Card.Content>
-              <Image src='https://media-exp1.licdn.com/dms/image/C4D03AQFqQiIfgSjUNg/profile-displayphoto-shrink_400_400/0?e=1595462400&v=beta&t=gtPXHuARZ8gj_g3dsSckvlX_OYkT8zWn68QUL-sU0lY' alt='ines-guerrero' circular size='small' className='AboutUsTeam__Image'/>
+              <Image src='https://media-exp1.licdn.com/dms/image/C4D03AQEj-Avc5bsXZA/profile-displayphoto-shrink_400_400/0?e=1597276800&v=beta&t=2qJu6Hswn7L2nLrP7Ad3y_3lvmS2JjtzuZzbuMgEMN4' alt='ines-guerrero' circular size='small' className='AboutUsTeam__Image'/>
               <Card.Header>Ines Guerrero</Card.Header>
               <Card.Description>
                 Full Stack Developer

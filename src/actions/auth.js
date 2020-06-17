@@ -1,31 +1,31 @@
 import { fetchData, postData, patchData, success } from './utils';
 import history from '../helpers/history';
 
-const userFetchLogin = user => {
-    const request = {};
-    request.user = user;
+const login = response => ({ type: 'LOGIN_SUCCESS', payload: response.payload });
+const failure = error => ({ type: 'LOGIN_FAILURE', error });
 
+const userFetchLogin = user => {
     return dispatch => {
-        return fetchData('users/sign_in', request)
+        return postData('users/sign_in', user)
             .then(response => {
                 // TODO: remove mockResult and un-comment in the success action below
-                mockResult(dispatch)
+                /* mockResult(dispatch) */
 
-                // if (addToLocal(response.payload)) {
-                //     history.push('/messages');
-                //     dispatch(login(response));
-                // }
+                addToLocal(response.payload);
+                history.push('/messages');
+                dispatch(login(response));
             })
             .catch(error => {
                 // TODO: replace with failure action
-                if( request.user.email === 'test@fail.com' ){
+                /* if( request.user.email === 'test@fail.com' ){
                     dispatch(failure(error.toString()));
                 }
                 else {
                     console.log(user);
                     mockResult(dispatch)
-                }
-                // dispatch(failure(error.toString()));
+                } */
+                console.log('win', user);
+                dispatch(failure(error.toString()));
             });
     };
 }
@@ -37,12 +37,8 @@ const userRemoveLogin = user => {
     }
 }
 
-const login = response => ({ type: 'LOGIN_SUCCESS', payload: response.payload });
-const failure = error => ({ type: 'LOGIN_FAILURE', error });
-
 const addToLocal = (response) => {
     if (response.authenticated) {
-        console.log(response.user);
         localStorage.user = JSON.stringify(response.user);
         return true;
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Header, Image, Divider, Button } from 'semantic-ui-react';
 
 import './AboutUs.scss';
-import ConnectedLearning from '../../assets/connected-learning.png';
+import ConnectedLearning from '../../assets/connected-learning-banner.png';
 import AboutUsTeam from '../../components/AboutUs/AboutUsTeam/AboutUsTeam';
 
 class AboutUs extends Component {
