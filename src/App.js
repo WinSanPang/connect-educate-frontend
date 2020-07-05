@@ -55,7 +55,7 @@ class App extends Component {
         <Route path="/contact" component={Contact}/>
         <Route path="/about-us" component={AboutUs}/>
         <Route path="/terms-conditions" component={TermsAndConditions}/>
-        <Route path="/privacy-policy" component={PrivacyPolicy}/>}
+        <Route path="/privacy-policy" component={PrivacyPolicy}/>
         <Route path="/safer-space-policy" component={SaferSpacePolicy}/>
         <Route path="*" component={NotFound}/>
       </Switch>

@@ -11,7 +11,7 @@ export default ( state, action ) => {
             newState.selectedMessage = action.payload.id;
             break;
         case 'LOGIN_SUCCESS': 
-            newState.user = action.payload.user;
+            newState.user = action.payload;
             break;        
         case 'LOGIN_FAILURE': 
             newState.loginError = action.error;
