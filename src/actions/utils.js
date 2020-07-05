@@ -17,14 +17,38 @@ const fetchData = ( endpoint, data ) => {
 	return response;
 }
 
-const postData = ( endpoint, data ) => {
-    const response = axios({
-        method: 'post',
-        url: `${config.API_URL}/${endpoint}`,
-        data
+const postData = ( endpoint, user ) => {
+    const data = JSON.stringify(user)
+    var config = {
+      method: 'post',
+      url: 'http://localhost:3000/users/sign_in\n',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : data
+    };
+    
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
     });
 
-	return response;
+    // console.log('hello from post data')
+    // console.log(config.API_URL, endpoint, user)
+    // const data = JSON.stringify(user)
+    // const response = axios({
+    //     method: 'post',
+    //     headers: { 
+    //         'Content-Type': 'application/json'
+    //       },
+    //     url: `${config.API_URL}/${endpoint}`,
+    //     data
+    // });
+
+	// return response;
 }
 
 const patchData = ( endpoint, data ) => {

@@ -1,32 +1,55 @@
 import { fetchData, postData, patchData, success } from './utils';
 import history from '../helpers/history';
+import axios from 'axios'
 
-const login = response => ({ type: 'LOGIN_SUCCESS', payload: response.payload });
+const login = response => ({ type: 'LOGIN_SUCCESS', payload: response });
 const failure = error => ({ type: 'LOGIN_FAILURE', error });
 
 const userFetchLogin = user => {
     return dispatch => {
-        return postData('users/sign_in', user)
-            .then(response => {
-                // TODO: remove mockResult and un-comment in the success action below
-                /* mockResult(dispatch) */
+            const data = JSON.stringify(user)
+    var config = {
+      method: 'post',
+      url: 'http://localhost:3000/users/sign_in\n',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : data
+    };
+    
+    return axios(config)
+    .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        addToLocal(response.data);
+        history.push('/messages');
+        dispatch(login(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
-                addToLocal(response.payload);
-                history.push('/messages');
-                dispatch(login(response));
-            })
-            .catch(error => {
-                // TODO: replace with failure action
-                /* if( request.user.email === 'test@fail.com' ){
-                    dispatch(failure(error.toString()));
-                }
-                else {
-                    console.log(user);
-                    mockResult(dispatch)
-                } */
-                console.log('win', user);
-                dispatch(failure(error.toString()));
-            });
+        
+        // return postData('users/sign_in', user)
+            // .then(response => {
+            //     // TODO: remove mockResult and un-comment in the success action below
+            //     /* mockResult(dispatch) */
+
+            //     addToLocal(response.data);
+            //     history.push('/messages');
+            //     dispatch(login(response));
+            // })
+            // .catch(error => {
+            //     // TODO: replace with failure action
+            //     /* if( request.user.email === 'test@fail.com' ){
+            //         dispatch(failure(error.toString()));
+            //     }
+            //     else {
+            //         console.log(user);
+            //         mockResult(dispatch)
+            //     } */
+            //     console.log('win', user);
+            //     dispatch(failure(error.toString()));
+            // });
     };
 }
 
@@ -38,11 +61,11 @@ const userRemoveLogin = user => {
 }
 
 const addToLocal = (response) => {
-    if (response.authenticated) {
-        localStorage.user = JSON.stringify(response.user);
+    if (response) {
+        localStorage.user = JSON.stringify(response);
         return true;
     }
-
+    console.log('This should not come out')
     return false;
 }
 
