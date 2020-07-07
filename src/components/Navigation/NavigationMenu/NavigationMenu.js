@@ -1,104 +1,93 @@
-import React, { Component } from 'react';
-import { isUserLoggedIn } from 'helpers';
-import { connect } from 'react-redux';
-import { userRemoveLogin } from 'actions';
-import { Menu, Image, Label } from 'semantic-ui-react';
+import React, { Component } from "react";
+import { isUserLoggedIn } from "helpers";
+import { connect } from "react-redux";
+import { userRemoveLogin } from "actions";
+import { Menu, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import capitalize from "../../../helpers/capitalize";
 
-import './NavigationMenu.css';
+import "./NavigationMenu.css";
 
 class NavigationMenu extends Component {
   state = {};
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => {
+    this.setState({ activeItem: name });
+  };
 
-  handleLogoutClick(e, args) {
-    if (isUserLoggedIn()) {
-      const { userRemoveLogin } = this.props;
-      userRemoveLogin()
-    }
-
+  handleLogoutClick = (e, args) => {
+    this.props.userRemoveLogin();
     this.handleItemClick(e, args);
-  }
+  };
 
   render() {
-    const { activeItem } = this.state
+    const { activeItem } = this.state;
+    //where is the user????
     const { user } = this.props;
-    const Messages = ( 
-          <Menu.Item
-              name='Requests'
-              active={activeItem === 'login'}
-              onClick={this.handleItemClick}
-              href='/messages'
-            >
-              Messages
-              {/* <Label color='red'>3</Label> */}
-            </Menu.Item> );
+    console.log("USER", user);
+    const links = ["resources", "about-us", "contact", "messages", "login"];
 
     return (
-      <div className='NavigationMenu'>
-        <Menu
-          stackable  
-          size='huge'
-          borderless
-          href='/'
-          >
-          <Menu.Item>
-            <Image style={{height:'60px'}} src={process.env.PUBLIC_URL + '/assets/logo.png'}/>
+      <div className="NavigationMenu">
+        <Menu stackable size="huge" borderless as={Link}>
+          <Menu.Item as={Link} to="/" position="left">
+            <Image
+              style={{ height: "60px" }}
+              src={process.env.PUBLIC_URL + "/assets/logo.png"}
+            />
           </Menu.Item>
 
-          <Menu.Item
-            name='Resources'
-            active={activeItem === 'requests'}
-            onClick={this.handleItemClick}
-            href='/resources'
-            position='right'
-          >
-            Resources
-          </Menu.Item>
+          {links.map((link) => {
+            switch (link) {
+              case "login":
+                return (
+                  <Menu.Item
+                    name={link}
+                    active={activeItem === link}
+                    onClick={this.handleLogoutClick}
+                    as={Link}
+                    to="/login"
+                  >
+                    {isUserLoggedIn() ? "Logout" : "Login"}
+                  </Menu.Item>
+                );
+              case "messages":
+                return isUserLoggedIn() ? (
+                  <Menu.Item
+                    name={link}
+                    active={activeItem === link}
+                    onClick={this.handleItemClick}
+                    as={Link}
+                    to={"/" + link}
+                  >
+                    {capitalize(link)}
+                  </Menu.Item>
+                ) : (
+                  ""
+                );
 
-          <Menu.Item
-            name='About'
-            active={activeItem === 'about'}
-            onClick={this.handleLogoutClick.bind(this)}
-            href='/about-us'
-          >
-            About Us
-          </Menu.Item>
-
-          <Menu.Item
-            name='Contact'
-            active={activeItem === 'contact'}
-            onClick={this.handleItemClick}
-            href='/contact'
-          >
-            Contact
-          </Menu.Item>
-
-          { user || isUserLoggedIn() ? Messages : '' }
-          
-          <Menu.Item
-            name='Login'
-            active={activeItem === 'login'}
-            onClick={this.handleLogoutClick.bind(this)}
-            href='/login'
-          >
-            { user || isUserLoggedIn() ? 'Logout' : 'Login' } 
-          </Menu.Item>
+              default:
+                return (
+                  <Menu.Item
+                    name={link}
+                    active={activeItem === link}
+                    onClick={this.handleItemClick}
+                    as={Link}
+                    to={"/" + link}
+                  >
+                    {capitalize(link)}
+                  </Menu.Item>
+                );
+            }
+          })}
         </Menu>
       </div>
-    )
+    );
   }
 }
 
-const mapDispatchToProps = ( dispatch ) => ({
-	userRemoveLogin: () => {
-		dispatch( userRemoveLogin() );
-	},
+const mapStateToProps = (state) => ({
+  user: state.user,
 });
 
-const mapStateToProps = ( state ) => ({
-	user: state.user,
-});
-
-
-export default connect( mapStateToProps, mapDispatchToProps )( NavigationMenu );
+export default connect(mapStateToProps, { userRemoveLogin })(NavigationMenu);
