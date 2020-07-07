@@ -16,18 +16,15 @@ class NavigationMenu extends Component {
   };
 
   handleLogoutClick = (e, args) => {
-    if (isUserLoggedIn()) {
-      const { userRemoveLogin } = this.props;
-      userRemoveLogin();
-    }
-
+    this.props.userRemoveLogin();
     this.handleItemClick(e, args);
   };
 
   render() {
     const { activeItem } = this.state;
+    //where is the user????
     const { user } = this.props;
-
+    console.log("USER", user);
     const links = ["resources", "about-us", "contact", "messages", "login"];
 
     return (
@@ -51,11 +48,11 @@ class NavigationMenu extends Component {
                     as={Link}
                     to="/login"
                   >
-                    {user || isUserLoggedIn() ? "Logout" : "Login"}
+                    {isUserLoggedIn() ? "Logout" : "Login"}
                   </Menu.Item>
                 );
               case "messages":
-                return user || isUserLoggedIn() ? (
+                return isUserLoggedIn() ? (
                   <Menu.Item
                     name={link}
                     active={activeItem === link}
